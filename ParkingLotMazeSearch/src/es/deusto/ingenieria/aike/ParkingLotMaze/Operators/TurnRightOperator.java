@@ -1,7 +1,11 @@
-package es.deusto.ingenieria.aike.ParkingLotMaze;
+package es.deusto.ingenieria.aike.ParkingLotMaze.Operators;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Cell.TypeCell;
-import es.deusto.ingenieria.aike.ParkingLotMaze.Flag.Direction;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Board;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Car;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Flag;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell.TypeCell;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Flag.Direction;
 import es.deusto.ingenieria.aike.formulation.Operator;
 import es.deusto.ingenieria.aike.formulation.State;
 

@@ -1,5 +1,7 @@
 package es.deusto.ingenieria.aike.ParkingLotMaze;
 
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Board;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;
 import es.deusto.ingenieria.aike.search.heuristic.EvaluationFunction;
 import es.deusto.ingenieria.ingenieria.search.Node;
 

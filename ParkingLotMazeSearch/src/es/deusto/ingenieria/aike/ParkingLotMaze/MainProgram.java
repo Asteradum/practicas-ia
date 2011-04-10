@@ -2,6 +2,7 @@ package es.deusto.ingenieria.aike.ParkingLotMaze;
 
 import es.deusto.ingenieria.aike.formulation.State;
 import es.deusto.ingenieria.aike.ParkingLotMaze.ManhattanDistance;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Board;
 import es.deusto.ingenieria.aike.search.blind.BreadthFSwithLog;
 import es.deusto.ingenieria.aike.search.blind.DepthFSwithLog;
 import es.deusto.ingenieria.aike.search.heuristic.BestFSwithLog;

@@ -1,6 +1,6 @@
-package es.deusto.ingenieria.aike.ParkingLotMaze;
+package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Flag.Direction;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Flag.Direction;
 
 
 public class Car{
