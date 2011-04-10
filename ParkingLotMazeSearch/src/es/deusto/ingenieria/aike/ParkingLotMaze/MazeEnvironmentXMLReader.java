@@ -80,10 +80,11 @@ public class MazeEnvironmentXMLReader extends InformationXMLReader{
 				
 				Cell c = new Cell(TypeCell.CIRCLE, this.row, this.column);
 				Direction e = null;
-				if (this.top) e= Direction.NORTH;
-				else if (this.bottom) e= Direction.SOUTH;
-				else if (this.right) e= Direction.EAST;
+				if (!this.top) e= Direction.NORTH;
+				else if (!this.bottom) e= Direction.SOUTH;
+				else if (!this.right) e= Direction.EAST;
 				else e= Direction.WEST;
+				
 				
 				flag = new Flag(c, e);
 				System.out.println(flag.toString());
