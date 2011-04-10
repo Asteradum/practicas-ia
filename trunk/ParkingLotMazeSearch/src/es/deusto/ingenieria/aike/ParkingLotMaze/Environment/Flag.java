@@ -1,6 +1,6 @@
-package es.deusto.ingenieria.aike.ParkingLotMaze;
+package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Cell.TypeCell;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell.TypeCell;
 
 
 public class Flag{

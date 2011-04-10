@@ -3,7 +3,11 @@ package es.deusto.ingenieria.aike.ParkingLotMaze;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Flag.Direction;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Board;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Flag.Direction;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Operators.MoveStraightOperator;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Operators.TurnLeftOperator;
+import es.deusto.ingenieria.aike.ParkingLotMaze.Operators.TurnRightOperator;
 import es.deusto.ingenieria.aike.formulation.Operator;
 import es.deusto.ingenieria.aike.formulation.Problem;
 import es.deusto.ingenieria.aike.formulation.State;

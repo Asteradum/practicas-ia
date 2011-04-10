@@ -1,4 +1,4 @@
-package es.deusto.ingenieria.aike.ParkingLotMaze;
+package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
 
 
