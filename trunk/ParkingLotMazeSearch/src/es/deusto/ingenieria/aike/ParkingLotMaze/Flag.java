@@ -36,7 +36,7 @@ public class Flag{
 	}
 	
 	public String toString() {
-		return "Flag [" + this.getPosition().toString() + ", Flag direction: " + this.getEntrance()+ "]";
+		return "Flag [" + this.getPosition().toString() + ", Flag entrance: " + this.getEntrance()+ "]";
 	}
 	public boolean equals(Object obj){
 		if (obj != null	&& obj instanceof Flag) {

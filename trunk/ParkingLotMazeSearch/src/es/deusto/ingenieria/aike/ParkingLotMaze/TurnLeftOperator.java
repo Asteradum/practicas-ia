@@ -28,65 +28,51 @@ public class TurnLeftOperator extends Operator {
 			
 			//Evaluating if the next position in the Maze is valid
 			if ( car.getDirection().equals(Direction.NORTH) ) 
+			{
 				if (car.getPosition().getColumn() != 1 ){
 					followingCarPos = board.getCell( car.getPosition().getRow(), car.getPosition().getColumn() - 1 );
 					followingCarDir = Direction.WEST;
 				}
-				else{
-					System.out.println("Turn Left is not applicable because direction is NORTH and it cannot move left");
-					return false;
-				}
+				else return false;
+			}
 			else if ( car.getDirection().equals(Direction.SOUTH) )
+			{
 				if ( car.getPosition().getColumn() != board.getTotalColumns() - 1 ){
 					followingCarPos = board.getCell( car.getPosition().getRow(), car.getPosition().getColumn() + 1 );
 					followingCarDir = Direction.EAST;
 				}	
-				else{
-					System.out.println("Turn Left is not applicable because direction is SOUTH and it cannot move right");
-					return false;
-				}
+				else return false;
+			}
 			else if ( car.getDirection().equals(Direction.WEST) )
+			{
 				if ( car.getPosition().getRow() != board.getTotalRows() - 1 ){
 					followingCarPos = board.getCell( car.getPosition().getRow() + 1, car.getPosition().getColumn() );
 					followingCarDir = Direction.SOUTH;
 				}
-				else{
-					System.out.println("Turn Left is not applicable because direction is WEST and it cannot move down");
-					return false;
-				}
-			else if ( car.getPosition().getRow() != 1 ){
+				else return false;
+			}
+			else if ( car.getPosition().getRow() != 1 )
+			{
 				followingCarPos = board.getCell( car.getPosition().getRow() - 1, car.getPosition().getColumn() );
 				followingCarDir = Direction.NORTH;
 			}
-			else{
-				System.out.println("Turn Left is not applicable because direction is EAST and it cannot move up");
-				return false;
-			}
+			else return false;
 			
 			//Evaluating if the next position is the flag and then if it is possible to move in
 			if ( flag.getPosition().equals(followingCarPos) )
-				if ( !( ( flag.getEntrance().equals(Direction.NORTH) &&  car.getDirection().equals(Direction.WEST)) ||
+			{
+				if ( ( flag.getEntrance().equals(Direction.NORTH) &&  car.getDirection().equals(Direction.WEST)) ||
 					 ( flag.getEntrance().equals(Direction.SOUTH) &&  car.getDirection().equals(Direction.EAST)) ||
 					 ( flag.getEntrance().equals(Direction.WEST) &&  car.getDirection().equals(Direction.SOUTH)) ||
 					 ( flag.getEntrance().equals(Direction.EAST) &&  car.getDirection().equals(Direction.NORTH))
-					) )
-				{
-					System.out.println("Turn Left is not applicable because there is a wall of the flag position");
+					)
 					return true;
-				}
-				else{
-					System.out.println("Turn Left is applicable, the next position is the flag and is: " + followingCarPos.toString() + " with a direction of: " + followingCarDir);
-					return true;
-				}
-			else{
-				System.out.println("Turn Left is applicable and the next position is: " + followingCarPos.toString() + " with a direction of: " + followingCarDir);
-				return true;
+				else return false;
 			}
+			else return true;
 		}
-		else{
-			System.out.println("Turn Left is not applicable because the car position is not an X, is a " + carPositionType);
-			return false;
-		}
+		// It is not a X, is a O
+		else return false;
 	}
 
 	//It only changes the position of the car
