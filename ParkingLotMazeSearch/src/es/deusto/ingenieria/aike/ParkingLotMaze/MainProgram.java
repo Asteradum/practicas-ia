@@ -19,7 +19,7 @@ public class MainProgram {
 	public static void main(String[] args) {
 		try {
 			
-			InformationXMLReader entornoSAXParser = new MazeEnvironmentXMLReader("data/parkinglotmaze4.xml"); 	
+			InformationXMLReader entornoSAXParser = new MazeEnvironmentXMLReader("data/parkinglotmaze1.xml"); 	
 			//Constructor of ParkingLotMazeProblem needs Board in order to know where is the flag so it can add a FinalState
 			ParkingLotMazeProblem problem= new ParkingLotMazeProblem((Board)entornoSAXParser.getInformation());
 			State initialState = new State((Board)entornoSAXParser.getInformation());
