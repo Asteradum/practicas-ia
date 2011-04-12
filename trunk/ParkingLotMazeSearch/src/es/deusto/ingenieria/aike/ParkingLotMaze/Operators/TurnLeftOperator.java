@@ -86,6 +86,8 @@ public class TurnLeftOperator extends Operator {
 		Car car = new Car (followingCarPos, followingCarDir);
 		
 		System.out.println("Turn Left is going to be applied moving the car to: " + car.toString() + " and changing the car direction to " + car.getDirection());
+		b.addDistance();
+		System.out.println(b.getTotalDistance());
 		return new State( new Board(b.getCells(), b.getTotalRows(), b.getTotalColumns(), car ,b.getFlag() ) );
 
 	}

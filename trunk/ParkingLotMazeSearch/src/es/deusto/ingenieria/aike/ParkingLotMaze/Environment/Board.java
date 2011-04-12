@@ -9,6 +9,7 @@ private int totalRows;
 private int totalColumns;
 private Car car;
 private Flag flag; 
+static private int totalDistance=0;
 
 	public Board(Cell[][] c, int rows, int columns, Car car, Flag f){
 		this.cells = c;
@@ -30,6 +31,8 @@ private Flag flag;
 		return this.cells;
 	}
 	
+	public void addDistance(){
+		this.totalDistance++;}
 	
 	public Cell getCells(int row, int column){
 		return this.cells[row][column];		
@@ -174,6 +177,14 @@ private Flag flag;
 			}
 		}
 		return newBoard;
+	}
+
+	public int getTotalDistance() {
+		return totalDistance;
+	}
+
+	public void setTotalDistance(int totalDistance) {
+		this.totalDistance = totalDistance;
 	}
 
 }
