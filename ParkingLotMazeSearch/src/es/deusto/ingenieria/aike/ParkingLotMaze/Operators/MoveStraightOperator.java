@@ -99,11 +99,12 @@ public class MoveStraightOperator extends Operator {
 		
 		Board b = (Board) state.getInformation();
 		Car car = new Car (followingCarPos, b.getCar().getDirection());
-		
-		System.out.println("Move Straight is going to be applied moving the car to: " + car.toString());
-		b.addDistance();
+		double dist=b.getTotalDistance()+this.getCost();
+		b.setTotalDistance(dist);
+		// b.srtPathCost(b.getPatCost + this.getCost);
 		System.out.println(b.getTotalDistance());
-		return new State( new Board(b.getCells(), b.getTotalRows(), b.getTotalColumns(), car ,b.getFlag() ) );
+		System.out.println("Move Straight is going to be applied moving the car to: " + car.toString());
+		return new State( new Board(b.getCells(), b.getTotalRows(), b.getTotalColumns(), car ,b.getFlag(),b.getTotalDistance() ) );
 
 	}
 }

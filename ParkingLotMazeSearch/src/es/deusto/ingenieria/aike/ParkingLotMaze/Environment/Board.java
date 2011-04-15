@@ -1,5 +1,8 @@
 package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
+import es.deusto.ingenieria.aike.ParkingLotMaze.Operators.*;
+
+
 
 
 public class Board {
@@ -9,14 +12,15 @@ private int totalRows;
 private int totalColumns;
 private Car car;
 private Flag flag; 
-static private int totalDistance=0;
+private double totalDistance=0;
 
-	public Board(Cell[][] c, int rows, int columns, Car car, Flag f){
+	public Board(Cell[][] c, int rows, int columns, Car car, Flag f,double d){
 		this.cells = c;
 		this.totalRows = rows;
 		this.totalColumns = columns;
 		this.car = car;
 		this.flag = f;
+		this.totalDistance=d;
 	}
 
 	public Board(Cell[][] tiles) {
@@ -31,8 +35,23 @@ static private int totalDistance=0;
 		return this.cells;
 	}
 	
-	public void addDistance(){
-		this.totalDistance++;}
+	/*public void addDistance(String operator){
+		 if (operator.equals("Moves Straight"))
+		 	{MoveStraightOperator op=new MoveStraightOperator();
+			 this.totalDistance=totalDistance+op.getCost();
+		 	}
+		 else if (operator.equals("Turns left"))
+		 	{TurnLeftOperator op=new TurnLeftOperator();
+			 this.totalDistance=totalDistance+op.getCost();}
+		 else if (operator.equals("Turns right"))
+		 	{TurnRightOperator op=new TurnRightOperator();
+			 this.totalDistance=totalDistance+op.getCost();}
+			
+		}*/
+	public void addDistance( double dist)
+	{
+		this.totalDistance=this.totalDistance+dist;
+	}
 	
 	public Cell getCells(int row, int column){
 		return this.cells[row][column];		
@@ -179,11 +198,11 @@ static private int totalDistance=0;
 		return newBoard;
 	}
 
-	public int getTotalDistance() {
+	public double getTotalDistance() {
 		return totalDistance;
 	}
 
-	public void setTotalDistance(int totalDistance) {
+	public void setTotalDistance(double totalDistance) {
 		this.totalDistance = totalDistance;
 	}
 

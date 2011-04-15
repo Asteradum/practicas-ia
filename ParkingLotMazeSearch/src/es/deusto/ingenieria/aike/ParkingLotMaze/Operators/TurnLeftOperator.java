@@ -37,8 +37,10 @@ public class TurnLeftOperator extends Operator {
 					followingCarPos = board.getCell( car.getPosition().getRow(), car.getPosition().getColumn() - 1 );
 					followingCarDir = Direction.WEST;
 				}
+				
 				else return false;
 			}
+			
 			else if ( car.getDirection().equals(Direction.SOUTH) )
 			{
 				if ( car.getPosition().getColumn() != board.getTotalColumns() - 1 ){
@@ -84,11 +86,10 @@ public class TurnLeftOperator extends Operator {
 		
 		Board b = (Board) state.getInformation();
 		Car car = new Car (followingCarPos, followingCarDir);
-		
+		double dist=b.getTotalDistance()+this.getCost();
+		b.setTotalDistance(dist);
 		System.out.println("Turn Left is going to be applied moving the car to: " + car.toString() + " and changing the car direction to " + car.getDirection());
-		b.addDistance();
-		System.out.println(b.getTotalDistance());
-		return new State( new Board(b.getCells(), b.getTotalRows(), b.getTotalColumns(), car ,b.getFlag() ) );
+		return new State( new Board(b.getCells(), b.getTotalRows(), b.getTotalColumns(), car ,b.getFlag(),b.getTotalDistance() ) );
 
 	}
 }

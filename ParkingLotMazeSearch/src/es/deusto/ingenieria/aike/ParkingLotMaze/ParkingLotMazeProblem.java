@@ -1,6 +1,7 @@
 package es.deusto.ingenieria.aike.ParkingLotMaze;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Board;
@@ -55,10 +56,11 @@ public class ParkingLotMazeProblem extends Problem {
 	protected void createOperators() {
 		Operator operator = new MoveStraightOperator();
 		this.addOperator(operator);
-		operator = new TurnLeftOperator();
-		this.addOperator(operator);
 		operator = new TurnRightOperator();
 		this.addOperator(operator);
+		operator = new TurnLeftOperator();
+		this.addOperator(operator);
+		
 	}
 	
 	public void solve(SearchMethod searchMethod) {
@@ -68,6 +70,12 @@ public class ParkingLotMazeProblem extends Problem {
 				System.out.println("Solution found!!");
 				List<String> operators = new ArrayList<String>();
 				searchMethod.solutionPath(finalNode, operators);
+				Board board=(Board) finalNode.getState().getInformation();
+				/*Board board=new Board();
+				Iterator iter = operators.iterator();
+				while (iter.hasNext())
+				  board.addDistance(iter.next().toString());*/
+				System.out.println("Total Cost: " +board.getTotalDistance());
 				searchMethod.createSolutionLog(operators);
 		 } 
 		 else System.out.println("Unable to find the solution!");
