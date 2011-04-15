@@ -35,7 +35,7 @@ public class MazeEnvironmentXMLReader extends InformationXMLReader{
 		}
 
 	public Object getInformation() {
-		return new Board( cells, this.totalRow, this.totalColumn, car, flag);
+		return new Board( cells, this.totalRow, this.totalColumn, car, flag,0);
 	}	
 	
 	public void startElement(String uri, String localName, String qName,
