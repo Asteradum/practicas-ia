@@ -7,15 +7,14 @@ import java.awt.Point;
 public class Cell extends Point {
 		
 	private static final long serialVersionUID = 1L;
-	public static enum TypeCell {
-		CROSS,
-		CIRCLE
-	}
-	
-	private TypeCell type;
+	/**
+	 * @uml.property  name="type"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Data.TypeCell type;
 	
 		
-	public Cell(TypeCell type, int row, int col) {
+	public Cell(Data.TypeCell type, int row, int col) {
 		super();
 		this.type = type;
 		setRow(row);
@@ -49,17 +48,25 @@ public class Cell extends Point {
 	}
 
 
-	public TypeCell getType() {
+	/**
+	 * @return
+	 * @uml.property  name="type"
+	 */
+	public Data.TypeCell getType() {
 		return type;
 	}
 
 	public String getTypeString() {
-		if (type.equals(TypeCell.CIRCLE))
+		if (type.equals(Data.TypeCell.CIRCLE))
 				return "O";
 		else return "X";
 	}
 
-	public void setType(TypeCell type) {
+	/**
+	 * @param type
+	 * @uml.property  name="type"
+	 */
+	public void setType(Data.TypeCell type) {
 		this.type = type;
 	}
 

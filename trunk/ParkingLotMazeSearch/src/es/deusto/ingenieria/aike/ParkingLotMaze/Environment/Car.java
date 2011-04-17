@@ -1,28 +1,50 @@
 package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Flag.Direction;
-
 
 public class Car{
 	
+	/**
+	 * @uml.property  name="position"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private Cell position;
-	private Direction direction;
+	/**
+	 * @uml.property  name="direction"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Data.Direction direction;
 	
-	public Car( Cell c, Direction d){
+	public Car( Cell c, Data.Direction d){
 		position = c;
 		direction = d;
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="position"
+	 */
 	public Cell getPosition() {
 		return position;
 	}
+	/**
+	 * @param cellPosition
+	 * @uml.property  name="position"
+	 */
 	public void setPosition(Cell cellPosition) {
 		this.position = cellPosition;
 	}
-	public Direction getDirection() {
+	/**
+	 * @return
+	 * @uml.property  name="direction"
+	 */
+	public Data.Direction getDirection() {
 		return direction;
 	}
-	public void setDirection(Direction direction) {
+	/**
+	 * @param direction
+	 * @uml.property  name="direction"
+	 */
+	public void setDirection(Data.Direction direction) {
 		this.direction = direction;
 	}
 	public Object clone() {
