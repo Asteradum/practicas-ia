@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ParkingLotMaze" size="1263,1136" id="es.deusto.ingenieria.aike.ParkingLotMaze" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D3130205061726B696E674C6F744D617A65536561726368">
+  <children xsi:type="editmodel:ClassEditModel" name="MainProgram" location="90,60" size="128,67" id="es.deusto.ingenieria.aike.ParkingLotMaze/MainProgram" runTimeClassModel="main([Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="es.deusto.ingenieria.aike.ParkingLotMaze/MainProgram#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.2 //@children.11/@children.2/@children.0/@sourceConnections.0 //@children.10/@sourceConnections.1" name="Flag" location="646,360" size="105,171" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag" runTimeClassModel="Flag(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Data.Direction;),setPosition(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;),clone(),equals(Ljava.lang.Object;),getPosition(),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="82,108">
+      <children xsi:type="editmodel:MethodEditModel" name="Flag" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#Flag(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Data.Direction;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clone" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#clone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#equals(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPosition" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#getPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPosition" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#setPosition(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@cellPosition+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,85" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@cellPosition+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#" attachSource="true" roleLabel="//@children.1/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="639,424" size="0,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="cellPosition" location="119,95" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@cellPosition+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#cellPosition" multiplicityLabel="//@children.1/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - cellPosition" location="411,424" size="63,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="411,452" size="6,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.10/@sourceConnections.0 //@children.11/@children.2/@children.0/@sourceConnections.1" name="Car" location="165,210" size="90,135" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car" runTimeClassModel="clone(),equals(Ljava.lang.Object;),Car(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Data.Direction;),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="67,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Car" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#Car(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Data.Direction;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clone" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#clone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#equals(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@position+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,135" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@position+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="position" location="0,65" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@position+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#position" multiplicityLabel="//@children.2/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - position" location="231,422" size="47,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="272,394" size="6,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.2/@sourceConnections.0 //@children.11/@children.2/@children.1/@sourceConnections.0 //@children.13/@sourceConnections.2 //@children.14/@sourceConnections.0 //@children.12/@sourceConnections.1" name="Cell" location="285,350" size="119,225" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell" runTimeClassModel="getColumn(),setRow(I),getRow(),clone(),setColumn(I),getPosition(),getTypeString(),toString(),Cell(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Data.TypeCell;II)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="96,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Cell" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#Cell(Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Data.TypeCell;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clone" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#clone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumn" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#getColumn()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPosition" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#getPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRow" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#getRow()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTypeString" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#getTypeString()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setColumn" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#setColumn(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setRow" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#setRow(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="MazeEnvironmentXMLReader" location="326,213" size="230,103" id="es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader" runTimeClassModel="getInformation(),MazeEnvironmentXMLReader(Ljava.lang.String;),startElement(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Lorg.xml.sax.Attributes;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,54">
+      <children xsi:type="editmodel:MethodEditModel" name="MazeEnvironmentXMLReader" id="es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader#MazeEnvironmentXMLReader(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInformation" id="es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader#getInformation()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startElement" id="es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader#startElement(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Lorg.xml.sax.Attributes;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@car+es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader@" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,51" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@car+es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader@|es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="car" location="90,54" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@car+es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#car" multiplicityLabel="//@children.4/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - car" location="262,243" size="26,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="262,271" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.xml/InformationXMLReader&lt;-es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.1/@children.1" sourceEnd="//@children.4/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="114,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="94,135"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@flag+es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader@" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="230,80" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@flag+es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader@|es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="flag" location="54,0" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@flag+es.deusto.ingenieria.aike.ParkingLotMaze/MazeEnvironmentXMLReader@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#flag" multiplicityLabel="//@children.4/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - flag" location="707,339" size="28,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="675,339" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1" name="InformationXMLReader" location="346,15" size="189,135" id="es.deusto.ingenieria.aike.xml/InformationXMLReader">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="information" id="es.deusto.ingenieria.aike.xml/InformationXMLReader#information"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,54">
+      <children xsi:type="editmodel:MethodEditModel" name="InformationXMLReader" id="es.deusto.ingenieria.aike.xml/InformationXMLReader#InformationXMLReader(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInformation" id="es.deusto.ingenieria.aike.xml/InformationXMLReader#getInformation()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startElement" id="es.deusto.ingenieria.aike.xml/InformationXMLReader#startElement(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Lorg.xml.sax.Attributes;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0" name="Problem" location="975,45" size="198,279" id="es.deusto.ingenieria.aike.formulation/Problem">
+    <children xsi:type="editmodel:CompartmentEditModel" size="144,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="finalStates" id="es.deusto.ingenieria.aike.formulation/Problem#finalStates"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="initialStates" id="es.deusto.ingenieria.aike.formulation/Problem#initialStates"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="operators" id="es.deusto.ingenieria.aike.formulation/Problem#operators"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Problem" id="es.deusto.ingenieria.aike.formulation/Problem#Problem(Ljava.lang.Object;Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Problem" id="es.deusto.ingenieria.aike.formulation/Problem#Problem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addFinalState" id="es.deusto.ingenieria.aike.formulation/Problem#addFinalState(Les.deusto.ingenieria.aike.formulation.State;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addInitialState" id="es.deusto.ingenieria.aike.formulation/Problem#addInitialState(Les.deusto.ingenieria.aike.formulation.State;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addOperator" id="es.deusto.ingenieria.aike.formulation/Problem#addOperator(Les.deusto.ingenieria.aike.formulation.Operator;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFinalStates" id="es.deusto.ingenieria.aike.formulation/Problem#getFinalStates()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInitialStates" id="es.deusto.ingenieria.aike.formulation/Problem#getInitialStates()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOperators" id="es.deusto.ingenieria.aike.formulation/Problem#getOperators()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isFinalState" id="es.deusto.ingenieria.aike.formulation/Problem#isFinalState(Les.deusto.ingenieria.aike.formulation.State;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ParkingLotMazeProblem" location="975,402" size="199,121" id="es.deusto.ingenieria.aike.ParkingLotMaze/ParkingLotMazeProblem" runTimeClassModel="ParkingLotMazeProblem(),isFinalState(Les.deusto.ingenieria.aike.formulation.State;),solve(Les.deusto.ingenieria.ingenieria.search.SearchMethod;),ParkingLotMazeProblem(Ljava.lang.Object;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="144,72">
+      <children xsi:type="editmodel:MethodEditModel" name="ParkingLotMazeProblem" id="es.deusto.ingenieria.aike.ParkingLotMaze/ParkingLotMazeProblem#ParkingLotMazeProblem(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ParkingLotMazeProblem" id="es.deusto.ingenieria.aike.ParkingLotMaze/ParkingLotMazeProblem#ParkingLotMazeProblem()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isFinalState" id="es.deusto.ingenieria.aike.ParkingLotMaze/ParkingLotMazeProblem#isFinalState(Les.deusto.ingenieria.aike.formulation.State;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="solve" id="es.deusto.ingenieria.aike.ParkingLotMaze/ParkingLotMazeProblem#solve(Les.deusto.ingenieria.ingenieria.search.SearchMethod;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.formulation/Problem&lt;-es.deusto.ingenieria.aike.ParkingLotMaze/ParkingLotMazeProblem" source="//@children.7" target="//@children.6" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,279"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.9/@sourceConnections.0" name="EvaluationFunction" location="720,35" size="223,117" id="es.deusto.ingenieria.aike.search.heuristic/EvaluationFunction">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,54">
+      <children xsi:type="editmodel:MethodEditModel" name="EvaluationFunction" id="es.deusto.ingenieria.aike.search.heuristic/EvaluationFunction#EvaluationFunction()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="calculateG" id="es.deusto.ingenieria.aike.search.heuristic/EvaluationFunction#calculateG(Les.deusto.ingenieria.ingenieria.search.Node;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="calculateH" id="es.deusto.ingenieria.aike.search.heuristic/EvaluationFunction#calculateH(Les.deusto.ingenieria.ingenieria.search.Node;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ManhattanDistance" location="750,213" size="163,85" id="es.deusto.ingenieria.aike.ParkingLotMaze/ManhattanDistance" runTimeClassModel="calculateG(Les.deusto.ingenieria.ingenieria.search.Node;),calculateH(Les.deusto.ingenieria.ingenieria.search.Node;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="81,36">
+      <children xsi:type="editmodel:MethodEditModel" name="calculateG" id="es.deusto.ingenieria.aike.ParkingLotMaze/ManhattanDistance#calculateG(Les.deusto.ingenieria.ingenieria.search.Node;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="calculateH" id="es.deusto.ingenieria.aike.ParkingLotMaze/ManhattanDistance#calculateH(Les.deusto.ingenieria.ingenieria.search.Node;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.search.heuristic/EvaluationFunction&lt;-es.deusto.ingenieria.aike.ParkingLotMaze/ManhattanDistance" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="81,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="111,117"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Board" location="165,600" size="142,351" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board">
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="cells" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#cells"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="totalColumns" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#totalColumns"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="totalDistance" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#totalDistance"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="totalRows" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#totalRows"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,216">
+      <children xsi:type="editmodel:MethodEditModel" name="Board" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#Board()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Board" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#Board([[Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Board" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#Board([[Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;IILes.deusto.ingenieria.aike.ParkingLotMaze.Environment.Car;Les.deusto.ingenieria.aike.ParkingLotMaze.Environment.Flag;D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clone" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#clone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#equals(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCell" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#getCell(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCells" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#getCells(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTotalDistance" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#getTotalDistance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCell" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#setCell(IILes.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCells" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#setCells(IILes.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setTotalDistance" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#setTotalDistance(D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@car+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board@" source="//@children.10" target="//@children.2" targetEnd="//@children.10/@sourceConnections.0/@children.2" label="//@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="42,0" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@car+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="car" location="42,135" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@car+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#car" multiplicityLabel="//@children.10/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - car" location="214,352" size="26,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="182,352" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@flag+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board@" source="//@children.10" target="//@children.1" targetEnd="//@children.10/@sourceConnections.1/@children.2" label="//@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="142,77" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@flag+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="flag" location="45,171" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@flag+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Board@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#flag" multiplicityLabel="//@children.10/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.10/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - flag" location="698,538" size="28,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="666,538" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Data" location="375,950" size="122,291" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,218">
+      <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.14/@sourceConnections.1 //@children.13/@sourceConnections.0" name="Direction" size="99,125" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction">
+        <children xsi:type="editmodel:CompartmentEditModel" size="54,72">
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="SOUTH" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#SOUTH%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="NORTH" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#NORTH%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="EAST" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#EAST%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="WEST" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#WEST%"/>
+        </children>
+        <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@entrance+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@" source="//@children.11/@children.2/@children.0" target="//@children.1" targetEnd="//@children.11/@children.2/@children.0/@sourceConnections.0/@children.2" label="//@children.11/@children.2/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@children.2/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+          <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+          <children xsi:type="editmodel:AssociationEndEditModel" name="entrance" location="99,52" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@entrance+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#entrance" attachSource="true" multiplicityLabel="//@children.11/@children.2/@children.0/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.11/@children.2/@children.0/@sourceConnections.0/@children.1/@children.0" navigable="true">
+            <children xsi:type="editmodel:LabelEditModel" name=" - entrance" location="491,1074" size="53,14" anchorKind="FirstPart"/>
+            <children xsi:type="editmodel:LabelEditModel" name="1" location="491,1046" size="6,14" anchorKind="FirstPart"/>
+          </children>
+          <children xsi:type="editmodel:AssociationEndEditModel" location="0,125" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@entrance+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Flag#"/>
+        </sourceConnections>
+        <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@direction+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@" source="//@children.11/@children.2/@children.0" target="//@children.2" targetEnd="//@children.11/@children.2/@children.0/@sourceConnections.1/@children.2" label="//@children.11/@children.2/@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.11/@children.2/@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+          <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+          <children xsi:type="editmodel:AssociationEndEditModel" name="direction" location="0,104" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@direction+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#direction" attachSource="true" multiplicityLabel="//@children.11/@children.2/@children.0/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.11/@children.2/@children.0/@sourceConnections.1/@children.1/@children.0" navigable="true">
+            <children xsi:type="editmodel:LabelEditModel" name=" - direction" location="327,1126" size="51,14" anchorKind="FirstPart"/>
+            <children xsi:type="editmodel:LabelEditModel" name="1" location="372,1098" size="6,14" anchorKind="FirstPart"/>
+          </children>
+          <children xsi:type="editmodel:AssociationEndEditModel" location="0,67" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@direction+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Car#"/>
+        </sourceConnections>
+      </children>
+      <children xsi:type="editmodel:EnumerationEditModel" name="TypeCell" size="97,89" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell">
+        <children xsi:type="editmodel:CompartmentEditModel" size="55,36">
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="CROSS" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell#CROSS%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="CIRCLE" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell#CIRCLE%"/>
+        </children>
+        <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell@type+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@" source="//@children.11/@children.2/@children.1" target="//@children.3" targetEnd="//@children.11/@children.2/@children.1/@sourceConnections.0/@children.2" label="//@children.11/@children.2/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@children.2/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+          <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+          <children xsi:type="editmodel:AssociationEndEditModel" name="type" location="0,39" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell@type+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell#type" attachSource="true" multiplicityLabel="//@children.11/@children.2/@children.1/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.11/@children.2/@children.1/@sourceConnections.0/@children.1/@children.0" navigable="true">
+            <children xsi:type="editmodel:LabelEditModel" name=" - type" location="347,1188" size="31,14" anchorKind="FirstPart"/>
+            <children xsi:type="editmodel:LabelEditModel" name="1" location="372,1160" size="6,14" anchorKind="FirstPart"/>
+          </children>
+          <children xsi:type="editmodel:AssociationEndEditModel" location="47,225" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$TypeCell@type+es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#"/>
+        </sourceConnections>
+      </children>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="MoveStraightOperator" location="646,990" size="182,81" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,18">
+      <children xsi:type="editmodel:MethodEditModel" name="MoveStraightOperator" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator#MoveStraightOperator()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.formulation/Operator&lt;-es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator" source="//@children.12" target="//@children.14/@sourceConnections.2" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="91,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,220"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator@" source="//@children.12" target="//@children.3" targetEnd="//@children.12/@sourceConnections.1/@children.2" label="//@children.12/@sourceConnections.1/@children.0" sourceEnd="//@children.12/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,0" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="followingCarPos" location="119,191" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/MoveStraightOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#followingCarPos" multiplicityLabel="//@children.12/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.12/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - followingCarPos" location="411,520" size="89,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="411,548" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TurnLeftOperator" location="1009,986" size="150,81" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="114,18">
+      <children xsi:type="editmodel:MethodEditModel" name="TurnLeftOperator" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator#TurnLeftOperator()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@followingCarDir+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator@" source="//@children.13" target="//@children.11/@children.2/@children.0" targetEnd="//@children.13/@sourceConnections.0/@children.2" label="//@children.13/@sourceConnections.0/@children.0" sourceEnd="//@children.13/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="74,81" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@followingCarDir+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="followingCarDir" location="99,83" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@followingCarDir+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#followingCarDir" multiplicityLabel="//@children.13/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.13/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - followingCarDir" location="491,1105" size="84,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="491,1077" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.formulation/Operator&lt;-es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator" source="//@children.13" target="//@children.14/@sourceConnections.2" targetEnd="//@children.13/@sourceConnections.1/@children.1" sourceEnd="//@children.13/@sourceConnections.1/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="37,261"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator@" source="//@children.13" target="//@children.3" targetEnd="//@children.13/@sourceConnections.2/@children.2" label="//@children.13/@sourceConnections.2/@children.0" sourceEnd="//@children.13/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="111,0" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="followingCarPos" location="119,215" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnLeftOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#followingCarPos" multiplicityLabel="//@children.13/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.13/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - followingCarPos" location="411,544" size="89,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="411,572" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TurnRightOperator" location="831,990" size="159,81" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,18">
+      <children xsi:type="editmodel:MethodEditModel" name="TurnRightOperator" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator#TurnRightOperator()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator@" source="//@children.14" target="//@children.3" targetEnd="//@children.14/@sourceConnections.0/@children.2" label="//@children.14/@sourceConnections.0/@children.0" sourceEnd="//@children.14/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="followingCarPos" location="119,215" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell@followingCarPos+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Cell#followingCarPos" multiplicityLabel="//@children.14/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.14/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - followingCarPos" location="411,544" size="89,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="411,572" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@followingCarDir+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator@" source="//@children.14" target="//@children.11/@children.2/@children.0" targetEnd="//@children.14/@sourceConnections.1/@children.2" label="//@children.14/@sourceConnections.1/@children.0" sourceEnd="//@children.14/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="78,81" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@followingCarDir+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="followingCarDir" location="99,107" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction@followingCarDir+es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator@|es.deusto.ingenieria.aike.ParkingLotMaze.Environment/Data$Direction#followingCarDir" multiplicityLabel="//@children.14/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.14/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - followingCarDir" location="491,1129" size="84,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="491,1101" size="18,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.13/@sourceConnections.1 //@children.12/@sourceConnections.0" autoLocated="true" id="es.deusto.ingenieria.aike.formulation/Operator&lt;-es.deusto.ingenieria.aike.ParkingLotMaze.Operators/TurnRightOperator" source="//@children.14" target="//@children.15" targetEnd="//@children.14/@sourceConnections.2/@children.1" sourceEnd="//@children.14/@sourceConnections.2/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,261" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.14/@sourceConnections.2" name="Operator" location="855,660" size="198,261" id="es.deusto.ingenieria.aike.formulation/Operator">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="cost" id="es.deusto.ingenieria.aike.formulation/Operator#cost"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="es.deusto.ingenieria.aike.formulation/Operator#name"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="73,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Operator" id="es.deusto.ingenieria.aike.formulation/Operator#Operator(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Operator" id="es.deusto.ingenieria.aike.formulation/Operator#Operator(Ljava.lang.String;D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Operator" id="es.deusto.ingenieria.aike.formulation/Operator#Operator()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="apply" id="es.deusto.ingenieria.aike.formulation/Operator#apply(Les.deusto.ingenieria.aike.formulation.State;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCost" id="es.deusto.ingenieria.aike.formulation/Operator#getCost()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="es.deusto.ingenieria.aike.formulation/Operator#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCost" id="es.deusto.ingenieria.aike.formulation/Operator#setCost(D)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setName" id="es.deusto.ingenieria.aike.formulation/Operator#setName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="es.deusto.ingenieria.aike.formulation/Operator#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" showScope="All" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
