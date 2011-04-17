@@ -12,13 +12,12 @@ public class ManhattanDistance extends EvaluationFunction {
 	}
 
 	public double calculateH(Node nodo) {
-		Board b = (Board) nodo.getState().getInformation();
-		
+		Board b = (Board) nodo.getState().getInformation();	
 		int distance = 0;		
 		
 		distance = (int) this.getManhattanDistance(b.getFlag().getPosition(), b.getCar().getPosition());
 		
-		return distance;
+		return distance * -1;
 	}
 	
 	private double getManhattanDistance(Cell f, Cell c) {

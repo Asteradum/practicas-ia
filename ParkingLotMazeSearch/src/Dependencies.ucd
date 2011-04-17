@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="Dependencies" size="1285,573" id="." metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D3130205061726B696E674C6F744D617A65536561726368">
+  <children xsi:type="editmodel:PackageEditModel" name="es.deusto.ingenieria.aike.ParkingLotMaze" location="600,135" size="302,60" id="es.deusto.ingenieria.aike.ParkingLotMaze">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.ParkingLotMaze-Standard::Call->es.deusto.ingenieria.aike.ParkingLotMaze.Environment*es.deusto.ingenieria.aike.ParkingLotMaze-Soyatec::Access->es.deusto.ingenieria.aike.ParkingLotMaze.Environment*es.deusto.ingenieria.aike.ParkingLotMaze-Standard::Instantiate->es.deusto.ingenieria.aike.ParkingLotMaze.Environment*es.deusto.ingenieria.aike.ParkingLotMaze-Soyatec::Import->es.deusto.ingenieria.aike.ParkingLotMaze.Environment" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Access, Import, Call, Instantiate»" size="163,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,60" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="275,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.ParkingLotMaze-Standard::Instantiate->es.deusto.ingenieria.aike.ParkingLotMaze.Operators" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.1/@children.2" label="//@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,5" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="366,60"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.0/@sourceConnections.0" name="es.deusto.ingenieria.aike.ParkingLotMaze.Environment" location="150,285" size="386,60" id="es.deusto.ingenieria.aike.ParkingLotMaze.Environment"/>
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.0/@sourceConnections.1" name="es.deusto.ingenieria.aike.ParkingLotMaze.Operators" location="50,50" size="368,60" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="es.deusto.ingenieria.aike.ParkingLotMaze.Operators-Standard::Call->es.deusto.ingenieria.aike.ParkingLotMaze.Environment*es.deusto.ingenieria.aike.ParkingLotMaze.Operators-Soyatec::Access->es.deusto.ingenieria.aike.ParkingLotMaze.Environment*es.deusto.ingenieria.aike.ParkingLotMaze.Operators-Standard::Instantiate->es.deusto.ingenieria.aike.ParkingLotMaze.Environment*es.deusto.ingenieria.aike.ParkingLotMaze.Operators-Soyatec::Import->es.deusto.ingenieria.aike.ParkingLotMaze.Environment" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Access, Import, Call, Instantiate»" size="163,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="233,60" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="133,0"/>
+    </sourceConnections>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" properties="wireOptions=4;Product=eUML2;displayOptions=1"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+</editmodel:ClassDiagramEditModel>

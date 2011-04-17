@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/8puzzle/lib/aike_search.jar"/>
-	<classpathentry kind="lib" path="/vacuumCleaner/lib/aike_formulation.jar"/>
+	<classpathentry kind="con" path="com.soyatec.uml.CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="lib/aike_formulation.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/aike_search.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

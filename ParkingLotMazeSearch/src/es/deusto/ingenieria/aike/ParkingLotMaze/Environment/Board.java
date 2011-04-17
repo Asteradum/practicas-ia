@@ -1,16 +1,30 @@
 package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Operators.*;
-
-
 
 
 public class Board {
 
+/**
+ * @uml.property  name="cells"
+ */
 private Cell[][] cells;
+/**
+ * @uml.property  name="totalRows"
+ */
 private int totalRows;
+/**
+ * @uml.property  name="totalColumns"
+ */
 private int totalColumns;
+/**
+ * @uml.property  name="car"
+ * @uml.associationEnd  
+ */
 private Car car;
+/**
+ * @uml.property  name="flag"
+ * @uml.associationEnd  
+ */
 private Flag flag; 
 private double totalDistance=0;
 
@@ -23,34 +37,20 @@ private double totalDistance=0;
 		this.totalDistance=d;
 	}
 
-	public Board(Cell[][] tiles) {
-		this.cells = tiles;
+	public Board(Cell[][] cells) {
+		this.cells = cells;
 	}
 	
 	public Board() {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="cells"
+	 */
 	public Cell[][] getCells(){
 		return this.cells;
-	}
-	
-	/*public void addDistance(String operator){
-		 if (operator.equals("Moves Straight"))
-		 	{MoveStraightOperator op=new MoveStraightOperator();
-			 this.totalDistance=totalDistance+op.getCost();
-		 	}
-		 else if (operator.equals("Turns left"))
-		 	{TurnLeftOperator op=new TurnLeftOperator();
-			 this.totalDistance=totalDistance+op.getCost();}
-		 else if (operator.equals("Turns right"))
-		 	{TurnRightOperator op=new TurnRightOperator();
-			 this.totalDistance=totalDistance+op.getCost();}
-			
-		}*/
-	public void addDistance( double dist)
-	{
-		this.totalDistance=this.totalDistance+dist;
 	}
 	
 	public Cell getCells(int row, int column){
@@ -62,46 +62,82 @@ private double totalDistance=0;
 	}
 
 
+	/**
+	 * @return
+	 * @uml.property  name="car"
+	 */
 	public Car getCar() {
 		return car;
 	}
 
 
+	/**
+	 * @param car
+	 * @uml.property  name="car"
+	 */
 	public void setCar(Car car) {
 		this.car = car;
 	}
 
 
+	/**
+	 * @return
+	 * @uml.property  name="flag"
+	 */
 	public Flag getFlag() {
 		return flag;
 	}
 
 
+	/**
+	 * @param flag
+	 * @uml.property  name="flag"
+	 */
 	public void setFlag(Flag flag) {
 		this.flag = flag;
 	}
 
 
+	/**
+	 * @param cells
+	 * @uml.property  name="cells"
+	 */
 	public void setCells(Cell[][] cells) {
 		this.cells = cells;
 	}
 
 
+	/**
+	 * @return
+	 * @uml.property  name="totalRows"
+	 */
 	public int getTotalRows() {
 		return totalRows;
 	}
 
 
+	/**
+	 * @param totalRows
+	 * @uml.property  name="totalRows"
+	 */
 	public void setTotalRows(int totalRows) {
 		this.totalRows = totalRows;
 	}
 
 
+	/**
+	 * @return
+	 * @uml.property  name="totalColumns"
+	 */
 	public int getTotalColumns() {
 		return totalColumns;
 	}
 
 
+	/**
+	 * @param totalColumns
+	 * @uml.property  name="totalColumns"
+	 */
 	public void setTotalColumns(int totalColumns) {
 		this.totalColumns = totalColumns;
 	}
@@ -124,33 +160,7 @@ private double totalDistance=0;
 		}
 		
 		return str;
-	}
-	
-	public boolean equals(Object obj) {
-		if (obj != null	&& obj instanceof Board) {
-			Board b = (Board)obj;
-			if (b.getTotalColumns() == this.getTotalColumns() && b.getTotalRows() == this.getTotalRows()){
-			
-				for(int i=1; i<totalRows; i++) {
-					for (int j=1; i<totalColumns; j++)
-						if (!cells[i][j].equals(b.getCell(i, j)))
-							return false;
-				}
-				
-				if (!flag.equals(b.getFlag()))
-					return false;
-				
-				if (!car.equals(b.getCar()))
-					return false;
-				
-				return true;
-			}
-			else return false;
-		} else {
-			return false;
-		}
-	}
-	*/
+	}*/
 	
 	/* This method is used for checking final state, the board is static, so it will not change
 	 * The same for the flag
@@ -189,12 +199,15 @@ private double totalDistance=0;
 		newBoard.setFlag((Flag) flag.clone());
 		newBoard.setTotalColumns(totalColumns);
 		newBoard.setTotalRows(totalRows);
+		newBoard.setTotalDistance(totalDistance);
+		Cell[][] newCells = new Cell[totalRows][totalColumns];
 		
 		for(int i=1; i<this.totalRows; i++) {
 			for(int j=1; j<this.totalColumns; j++) {
-				newBoard.setCell(i, j, (Cell) cells[i][j].clone());				
+				newCells[i][j] = (Cell) cells[i][j].clone();				
 			}
 		}
+		newBoard.setCells(newCells);
 		return newBoard;
 	}
 

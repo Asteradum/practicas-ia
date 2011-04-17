@@ -1,20 +1,21 @@
 package es.deusto.ingenieria.aike.ParkingLotMaze.Environment;
 
-import es.deusto.ingenieria.aike.ParkingLotMaze.Environment.Cell.TypeCell;
 
 
 public class Flag{
 	
+	/**
+	 * @uml.property  name="cellPosition"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	private Cell cellPosition;
-	public static enum Direction {
-		NORTH,
-		SOUTH,
-		WEST,
-		EAST
-	}
-	private Direction entrance;
+	/**
+	 * @uml.property  name="entrance"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private Data.Direction entrance;
 	
-	public Flag( Cell c, Direction e){
+	public Flag( Cell c, Data.Direction e){
 		cellPosition = c;
 		entrance = e;
 	}
@@ -25,10 +26,18 @@ public class Flag{
 	public void setPosition(Cell cellPosition) {
 		this.cellPosition = cellPosition;
 	}
-	public Direction getEntrance() {
+	/**
+	 * @return
+	 * @uml.property  name="entrance"
+	 */
+	public Data.Direction getEntrance() {
 		return entrance;
 	}
-	public void setEntrance(Direction direction) {
+	/**
+	 * @param direction
+	 * @uml.property  name="entrance"
+	 */
+	public void setEntrance(Data.Direction direction) {
 		this.entrance = direction;
 	}
 	public Object clone() {
