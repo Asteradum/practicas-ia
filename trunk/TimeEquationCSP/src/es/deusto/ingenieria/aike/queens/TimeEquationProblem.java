@@ -12,9 +12,9 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 
 //We have subclassed CSPproblem, binding its parameter Type to Integer
 //This means that the values the variables of the Queens Problem will take are Integers
-public class NQueenProblem extends CSPproblem<Integer> {
+public class TimeEquationProblem extends CSPproblem<Integer> {
 		
-	public NQueenProblem(int queens) {
+	public TimeEquationProblem(int queens) {
 		this.createQueens(queens);
 		this.createConstraints();
 	}
