@@ -17,8 +17,7 @@ public class TimeEquationXMLReader extends InformationXMLReader{
 	}
 
 	public Object getInformation() {
-		//return new Board( cells, this.totalRow, this.totalColumn, car, flag,0);
-		return null; //Devolver un environment para el problema
+		return new Environment(multiplier, constant, maxMinutes);
 	}	
 	
 	public void startElement(String uri, String localName, String qName,
@@ -28,6 +27,8 @@ public class TimeEquationXMLReader extends InformationXMLReader{
 				this.multiplier = Integer.valueOf(attributes.getValue("multiplier"));
 				this.constant = Integer.valueOf(attributes.getValue("constant"));
 				this.maxMinutes = Integer.valueOf(attributes.getValue("maxMinutes"));	
+				
+				
 				
 				System.out.println("Mutiplier: " + this.multiplier + ", constant: " + this.constant + ", maxMinutes: " + this.maxMinutes);
 			}

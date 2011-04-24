@@ -14,15 +14,17 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 //This means that the values the variables of the Queens Problem will take are Integers
 public class TimeEquationProblem extends CSPproblem<Integer> {
 		
-	public TimeEquationProblem(int queens) {
-		this.createQueens(queens);
+	public TimeEquationProblem(Environment e) {
+		/*
+		this.createDigits(queens);
 		this.createConstraints();
+		*/
 	}
 	
-	private void createQueens(int queens) {		
+	private void createDigits(int queens) {		
 		for (int i=1; i<=queens; i++) {
 			//The value domain is the same one for every queen variable			
-			this.addVariable(new Queen(i, this.createDomain(queens)));
+			this.addVariable(new Digit(i, this.createDomain(queens)));
 		}
 	}
 	
