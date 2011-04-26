@@ -9,19 +9,52 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 
 //We have subclassed Constraint binding its parameter to Integer
 //This means that the values the variables of the Queens Problem will take are Integers
-public class Threat extends Constraint<Integer> {
+public class Constraints extends Constraint<Integer> {
+	private Environment envi;
 
-	public Threat(List<Variable<Integer>> variables, String name){
+	public Constraints(List<Variable<Integer>> variables, String name){
 		super(name, variables);
 	}
 
+	@Override
 	public boolean isSatisfied(Variable<Integer> variable, Integer value) {
+		if (this.getName().equals("unary"))
+			{int c=10;
+			int g=10;
+			while (c>6)
+				envi.addNumber();
+			while (g>6)
+				envi.addNumber();
+			
+			}	
+		if (this.getName().equals("binary")){
+			int  d=envi.addNumber();
+			while ((d*envi.getMultiplier())%10!=envi.getConstant())
+				 d=envi.addNumber();
+			System.out.println("d"+d+"multip "+envi.getMultiplier()+"modulo"+envi.getMultiplier()%10);
+			int x1=d*envi.getMultiplier()/10;
+			System.out.println(x1+" lalal");
+				
+			/*•	D x M = Constant + 10 x X1
+			•	A x M = E + X3
+			•	FE <= Max Minutes
+			*/
+		}
+		else if (this.getName().equals("global")){
+			/*•	C x M = G + X1 + 10 x X2
+			•	B x M = F + X2 + 10 x X3
+			•	AB <= Max Minutes / Multiplier + X2
+			*/
+		}
+
+				
+		
+		/*
 		//we associate a Point with the current queen variable (passed in the variable parameter)
 		//this point is made out of the column and row values of the queen variable
 		//and will be used to check whether other queens are on the same diagonal as the current queen
 		Point currentQueen = new Point(Integer.valueOf(variable.getName()), value);
 		Point auxQueen = null;
-		
 		//For each of the queen variables involved in the constraint
 		for (Variable<Integer> varAux : this.getVariables()) {
 			//If the variable is a different queen from the current one and has a value assigned
@@ -41,6 +74,6 @@ public class Threat extends Constraint<Integer> {
 			}
 		}
 		
-		return true;
-	}
+		;*/
+	return true;}
 }

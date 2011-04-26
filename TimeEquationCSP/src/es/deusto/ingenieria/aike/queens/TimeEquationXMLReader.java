@@ -3,6 +3,7 @@ package es.deusto.ingenieria.aike.queens;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
+
 import es.deusto.ingenieria.aike.xml.InformationXMLReader;
 
 
@@ -16,10 +17,12 @@ public class TimeEquationXMLReader extends InformationXMLReader{
 		super(initialState);
 	}
 
+	@Override
 	public Object getInformation() {
 		return new Environment(multiplier, constant, maxMinutes);
 	}	
 	
+	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
 		try {
