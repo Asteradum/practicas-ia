@@ -14,12 +14,8 @@ public class Digit extends Variable<Integer> {
 		super(String.valueOf(box), domainValues);
 	}
 	
-	/**
-	 * Returns a string describing the queen variable.
-	 * The string specifies: "Queen Name = row value/?"
-	 * 
-	 * @return String, describing the variable.
-	 */	
+		
+	@Override
 	public String toString() {
 		String result = "Digit " + this.getName() + " = ";
 

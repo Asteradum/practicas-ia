@@ -1,12 +1,15 @@
 package es.deusto.ingenieria.aike.queens;
 
+import java.lang.reflect.Array;
+import java.util.Random;
+
 public class Environment {
 	
 	private Digit[] digits;
 	private int multiplier;
 	private int constant;
 	private int maxMinutes;
-	
+
 	public Environment( int mult, int c, int min){
 		this.multiplier = mult;
 		this.constant = c;
@@ -39,5 +42,10 @@ public class Environment {
 	public int getMaxMinutes() {
 		return maxMinutes;
 	}
-
+	public int addNumber()
+	{
+	
+	return (int)(Math.random()*10);
+	
+	}
 }
