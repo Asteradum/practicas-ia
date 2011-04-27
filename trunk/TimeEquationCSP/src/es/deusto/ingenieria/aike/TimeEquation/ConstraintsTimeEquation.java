@@ -11,6 +11,9 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 //This means that the values the variables of the Queens Problem will take are Integers
 public class ConstraintsTimeEquation extends Constraint<Integer> {
 	
+	private List<Integer> xmlData=(List<Integer>)(new TimeEquationXMLReader("data/equationMinSec-1.xml")).getInformation();
+	
+	
 	public ConstraintsTimeEquation(List<Variable<Integer>> variables, String name){
 		super(name, variables);
 	}
@@ -18,14 +21,25 @@ public class ConstraintsTimeEquation extends Constraint<Integer> {
 		
 	public boolean isSatisfied(Variable<Integer> variable, Integer value) {
 		if (this.getName().equals("unary"))
-		{ 
+		{  if ((value<6) )
+			return true;
+		else return false;
 			/*•	C<6
 			•	G<6
 			*/
 
 		}
 		if (this.getName().equals("binary"))
-				{/*•	D x M = Constant + 10 x X1
+				{System.out.println("este valor:"+value*this.xmlData.get(0)%10);
+				System.out.println(this.xmlData.get(1));
+				if ((value*this.xmlData.get(0))%10==this.xmlData.get(1))
+				{ 
+					int x1=value*this.xmlData.get(0)/10;
+					System.out.println(x1+" lalal");
+					return true;}
+				else return false;
+			
+			/*•	D x M = Constant + 10 x X1
 			•	A x M = E + X3
 			•	FE <= Max Minutes
 			*/}
