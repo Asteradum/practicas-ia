@@ -59,14 +59,21 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		// 2 Suma1
 		// 2 Suma2
 		
-		
-		//There is a single constraint involving every queen variable. 
-		Threat threat = new Threat(this.getVariables(), "Threat");
+		// QUEENS
+		//________________________________________
+				//There is a single constraint involving every queen variable. 
+		//Threat threat = new Threat(this.getVariables(), "Threat");
 		//so this constraint must be associated to each queen variable
-		for (Variable<Integer> queen : this.getVariables()) {
-			queen.addConstraint(threat);			
+		//for (Variable<Integer> queen : this.getVariables()) {
+		//queen.addConstraint(threat);
+		//________________________________________
+		
+		ConstraintsTimeEquation cons1 = new ConstraintsTimeEquation(this.getVariables(), "unary");
+		ConstraintsTimeEquation cons2 = new ConstraintsTimeEquation(this.getVariables(), "binary");
+		ConstraintsTimeEquation cons3 = new ConstraintsTimeEquation(this.getVariables(), "global");
+					
 		}
-	}
+	
 	
 	private List<Integer> createDomain() {
 		//A digit is between 0 and 9
@@ -81,31 +88,13 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	
 	public String toString() {
 		String result = "   ";
-		String row;
-		
-		for (int i=0; i<this.getVariables().size(); i++) {
-			result += (i<9) ? "   " + (i+1) : "  " + (i+1);
-		}
-		
-		for (int i=0; i<this.getVariables().size(); i++) {
-			row = " ";
-			
-			for (int j=0; j<this.getVariables().size(); j++) {
-				if (j==0) {
-					row += (i<9) ? " " + (i+1) + " |" : (i+1) + " |";
-				}
-				
-				if (this.getVariables().get(j).getValue() == i) {
-					row += " Q |";
-				} else {
-					row += " - |";
-				}
-			}
-			
-			result += "\n";
-			result += row;
-		}
-		
+		result="A B : C D x Multiplier = E F : G Constant";
+		result += "\n";
+		result+="    :     x     "+this.xmlData.get(0)+"      =     :      "+this.xmlData.get(1);
+		result += "\n";
+		result += "Final Values: ";
+		result += "\n";
+		//result+=SOLUCION FINAL;
 		return result;
 	}
 	
