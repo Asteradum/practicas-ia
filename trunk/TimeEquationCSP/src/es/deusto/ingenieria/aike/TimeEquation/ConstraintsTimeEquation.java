@@ -15,23 +15,28 @@ public class ConstraintsTimeEquation extends Constraint<Integer> {
 		super(name, variables);
 	}
 
+		
 	public boolean isSatisfied(Variable<Integer> variable, Integer value) {
-			/*if (this.getName().equals("unary"))
-				{int c=10;
-				int g=10;
-				while (c>6)
-					//envi.addNumber();
-				while (g>6)
-					//envi.addNumber();
+		if (this.getName().equals("unary"))
+		{ }
+		if (this.getName().equals("binary"))
+				{}
+		if (this.getName().equals("global"))
+			{}
+			return true;}
+	
+}
+
 				
-				}	
-			if (this.getName().equals("binary")){
-				int  d=envi.addNumber();
-				while ((d*envi.getMultiplier())%10!=envi.getConstant())
+				
+					
+			/*if (this.getName().equals("binary")){
+				int  d=this.addNumber();
+				while ((d*.getMultiplier())%10!=envi.getConstant())
 					 d=envi.addNumber();
 				System.out.println("d"+d+"multip "+envi.getMultiplier()+"modulo"+envi.getMultiplier()%10);
 				int x1=d*envi.getMultiplier()/10;
-				System.out.println(x1+" lalal");
+				System.out.println(x1+" lalal");}
 					
 				/*•	D x M = Constant + 10 x X1
 				•	A x M = E + X3
@@ -43,8 +48,7 @@ public class ConstraintsTimeEquation extends Constraint<Integer> {
 				•	B x M = F + X2 + 10 x X3
 				•	AB <= Max Minutes / Multiplier + X2
 				}*/
-			return true;}
-	}
+			
 //QUEENS
 //--------------------------------------------------------------------------------
 

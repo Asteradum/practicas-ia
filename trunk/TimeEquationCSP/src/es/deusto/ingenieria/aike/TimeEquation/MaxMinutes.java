@@ -20,9 +20,10 @@ public class MaxMinutes extends Constraint<Integer> {
 	public boolean isSatisfied(Variable<Integer> variable, Integer value) {
 		
 		if ( ( variable!= null )&& ( this.getVariables().contains(variable) ) )
-			if ()
+			//if ()
 			
-			else return false;
+			//else
+			return false;
 		else return false;
 		
 	}

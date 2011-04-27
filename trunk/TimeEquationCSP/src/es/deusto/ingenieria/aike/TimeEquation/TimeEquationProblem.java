@@ -45,8 +45,8 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	}
 	
 	private void createConstraints() {
-		LowerThan lower = new LowerThan(); 
-		lower = new LowerThan();
+		//LowerThan lower = new LowerThan(); 
+		//lower = new LowerThan();
 		
 		
 		// Dos LowerThan
@@ -59,19 +59,22 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		// 2 Suma1
 		// 2 Suma2
 		
-		// QUEENS
-		//________________________________________
-				//There is a single constraint involving every queen variable. 
-		//Threat threat = new Threat(this.getVariables(), "Threat");
-		//so this constraint must be associated to each queen variable
-		//for (Variable<Integer> queen : this.getVariables()) {
-		//queen.addConstraint(threat);
-		//________________________________________
 		
 		ConstraintsTimeEquation cons1 = new ConstraintsTimeEquation(this.getVariables(), "unary");
 		ConstraintsTimeEquation cons2 = new ConstraintsTimeEquation(this.getVariables(), "binary");
 		ConstraintsTimeEquation cons3 = new ConstraintsTimeEquation(this.getVariables(), "global");
-					
+		Variable <Integer>a=this.getVariables().get(0);
+		Variable <Integer>b=this.getVariables().get(1);
+		Variable <Integer>c=this.getVariables().get(2);
+		Variable <Integer>d=this.getVariables().get(3);
+		Variable <Integer>e=this.getVariables().get(4);
+		Variable <Integer>f=this.getVariables().get(5);
+		Variable <Integer>g=this.getVariables().get(6);
+		a.addConstraint(cons2);
+		a.addConstraint(cons3);
+		//----
+		d.addConstraint(cons1);
+							
 		}
 	
 	
@@ -79,7 +82,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		//A digit is between 0 and 9
 		List<Integer> domain = new ArrayList<Integer>(10);		
 		
-		for (int i=1; i<=9; i++) {
+		for (int i=0; i<=9; i++) {
 			domain.add(i);
 		}
 
@@ -94,7 +97,8 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		result += "\n";
 		result += "Final Values: ";
 		result += "\n";
-		//result+=SOLUCION FINAL;
+		result+=this.getVariables().get(0).getValue()+" "+this.getVariables().get(1).getValue()+" : "+this.getVariables().get(2).getValue()+" "+this.getVariables().get(3).getValue()+" x    " +
+				" "+this.xmlData.get(0)+"      = "+this.getVariables().get(4).getValue()+" "+this.getVariables().get(5).getValue()+" : "+this.getVariables().get(6).getValue()+"    "+this.xmlData.get(1);
 		return result;
 	}
 	
