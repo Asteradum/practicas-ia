@@ -10,23 +10,18 @@ public class MainProgram {
 
 	public static void main(String[] args) {
 		try {						
-			/*
-			InformationXMLReader entornoSAXParser = new MazeEnvironmentXMLReader("data/parkinglotmaze1.xml"); 	
-			//ParkingLotMazeProblem problem= new ParkingLotMazeProblem((Board)entornoSAXParser.getInformation());
-			ParkingLotMazeProblem problem= new ParkingLotMazeProblem();
-			State initialState = new State((Board)entornoSAXParser.getInformation());
-			 * */
-			InformationXMLReader SAXParserEnvironment = new TimeEquationXMLReader("data/equationMinSec-4.xml");
+			
+			InformationXMLReader SAXParserEnvironment = new TimeEquationXMLReader("data/equationMinSec-1.xml");
 			
 			TimeEquationProblem problem = new TimeEquationProblem((List<Integer>)SAXParserEnvironment.getInformation());
 			/*
 			int size = 17;
 			NQueenProblem problem = new NQueenProblem(size);						
 			System.out.println("* CSP " + size + "-queen problem");
-			
+			*/
 			BackTracking<Integer> backTracking = new BackTracking<Integer>();			
 			problem.solve(backTracking);			
-			*/
+			
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();
