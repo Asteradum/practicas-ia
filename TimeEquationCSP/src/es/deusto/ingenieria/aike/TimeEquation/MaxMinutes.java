@@ -22,13 +22,12 @@ public class MaxMinutes extends Constraint<Integer> {
 		if ( ( variable!= null )&& ( this.getVariables().contains(variable) ) ){
 			
 			for (Variable<Integer> digit : getVariables() ){
-				if ( !digit.hasValue() ) return true;
+				if ( (!digit.equals(variable) ) && ( !digit.hasValue() ) )  return true;
 			}
-			
-			// Y si la unidad tiene un valor superior al permitido en unit, pero el ten digit en el momento de asignar ese valor no tenia un valor superior al ten?  
+			  
 			// Check if the variable is a ten or a unit Digit
 			if ( (variable.getName().equals("A") || variable.getName().equals("E") ) ){
-				 if ( value <= ten )
+				 if ( value <= ten  && this.getVariables().get(1).getValue() <= unit )
 					 return true;
 				 else return false;
 			}
