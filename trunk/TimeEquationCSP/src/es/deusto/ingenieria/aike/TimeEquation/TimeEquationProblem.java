@@ -144,7 +144,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		//A digit is between 0 and 9
 		List<Integer> domain = new ArrayList<Integer>(10);		
 		
-		for (int i=0; i<=9; i++) {
+		for (int i=1; i<=9; i++) {
 			domain.add(i);
 		}
 
