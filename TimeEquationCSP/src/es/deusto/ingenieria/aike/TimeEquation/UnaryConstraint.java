@@ -8,7 +8,7 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 
 public class UnaryConstraint extends Constraint<Integer> {
 
-	// it is the value of the Constant or the Multiplier or the limitation of the seconds
+	// value can be constant, multiplier or the limitation of the seconds
 	private int value;
 	// 1 = LowerThan; 2 = EqualTo; 3 = DistinctFrom
 	private int constraintType;

@@ -35,8 +35,6 @@ public class TimeEquationXMLReader extends InformationXMLReader{
 				this.constant = Integer.valueOf(attributes.getValue("constant"));
 				this.maxMinutes = Integer.valueOf(attributes.getValue("maxMinutes"));	
 				
-				
-				
 				System.out.println("Mutiplier: " + this.multiplier + ", constant: " + this.constant + ", maxMinutes: " + this.maxMinutes);
 			}
 				 
