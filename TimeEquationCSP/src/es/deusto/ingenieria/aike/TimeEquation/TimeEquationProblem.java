@@ -78,23 +78,23 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		//Comprobar si poseen valores nulos en las constraints?
 		
 		//LowerThan for C and G
-		UnaryConstraint unary = new UnaryConstraint(this.getVariables().subList(C, C), "LowerThan");
+		UnaryConstraint unary = new UnaryConstraint(this.getVariables().subList(C, D), "LowerThan");
 		this.getVariables().get(C).addConstraint(unary);
 		
-		unary = new UnaryConstraint(this.getVariables().subList(G, G), "LowerThan");
+		unary = new UnaryConstraint(this.getVariables().subList(G, H), "LowerThan");
 		this.getVariables().get(G).addConstraint(unary);
 		
 		//EqualTo Constant and Multiplier
-		unary = new UnaryConstraint(this.getVariables().subList(M, M), "EqualTo");
+		unary = new UnaryConstraint(this.getVariables().subList(M, E), "EqualTo");
 		unary.setValue(multiplier);
 		this.getVariables().get(M).addConstraint(unary);
 		
-		unary = new UnaryConstraint(this.getVariables().subList(H, H), "EqualTo");
+		unary = new UnaryConstraint(this.getVariables().subList(H, X1), "EqualTo");
 		unary.setValue(constant);
 		this.getVariables().get(H).addConstraint(unary);
 		
 		//Distinct from constant and multiplier
-		List<Variable<Integer>> sub = this.getVariables().subList(A, G);
+		List<Variable<Integer>> sub = new ArrayList<Variable<Integer>>(this.getVariables().subList(A, H));
 		sub.remove(M);
 		unary = new UnaryConstraint(sub, "DistinctFrom");
 		unary.setValue(multiplier);
@@ -112,12 +112,12 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		}
 		
 		//MaxMinutes
-		MaxMinutes max = new MaxMinutes(this.getVariables().subList(A, B), "MaxMinutes");
+		MaxMinutes max = new MaxMinutes(this.getVariables().subList(A, C), "MaxMinutes");
 		max.setMaxMinutes(maxMinutes);
 		this.getVariables().get(A).addConstraint(max);
 		this.getVariables().get(B).addConstraint(max);
 		
-		max = new MaxMinutes(this.getVariables().subList(E, F), "MaxMinutes");
+		max = new MaxMinutes(this.getVariables().subList(E, G), "MaxMinutes");
 		this.getVariables().get(E).addConstraint(max);
 		this.getVariables().get(F).addConstraint(max);
 		

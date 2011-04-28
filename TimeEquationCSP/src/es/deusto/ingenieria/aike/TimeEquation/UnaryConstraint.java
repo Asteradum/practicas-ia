@@ -32,26 +32,26 @@ public class UnaryConstraint extends Constraint<Integer> {
 		if ( ( variable!= null ) && ( this.getVariables().contains(variable) ) ) {
 			
 			switch (constraintType) {
-			case 1: // LowerThan
-				
-				if ( value < this.value ) 
-					return true;
-				else return false;
-				
-			case 2: //EqualTo 
-				
-				if ( value == this.value ) 
-					return true;
-				else return false;
-				
-			case 3: // DistinctFrom
-				
-				if ( value != this.value ) 
-					return true;
-				else return false;
-				
-			default: System.out.println("Error, the unary constraint does not have a correct type");
-				return false;
+				case 1: // LowerThan
+					
+					if ( value < this.value ) 
+						return true;
+					else return false;
+					
+				case 2: //EqualTo 
+					
+					if ( value == this.value ) 
+						return true;
+					else return false;
+					
+				case 3: // DistinctFrom
+					
+					if ( value != this.value ) 
+						return true;
+					else return false;
+					
+				default: System.out.println("Error, the unary constraint does not have a correct type");
+					return false;
 			}
 		}
 		else return false;
