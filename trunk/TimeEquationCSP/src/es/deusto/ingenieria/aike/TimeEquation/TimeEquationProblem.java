@@ -14,7 +14,7 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 //This means that the values the variables of the Queens Problem will take are Integers
 public class TimeEquationProblem extends CSPproblem<Integer> {
 		
-	//This constants are used to take the variabel from the list
+	//This constants are used to take the variable from the list
 	private final int A = 0;
 	private final int B = 1;
 	private final int C = 2;
@@ -74,22 +74,42 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	
 	private void createConstraints() {
 		
-		// Crear un UnaryConstraint que dependiendo del nombre, haga un menor, un mayor o un igual en el isSatisfied
-		//LowerThan for C and G
-		LowerThan lower = new LowerThan(this.getVariables().subList(C, C), "LowerThan");
-		this.getVariables().get(C).addConstraint(lower);
 		
-		lower = new LowerThan(this.getVariables().subList(G, G), "LowerThan");
-		this.getVariables().get(G).addConstraint(lower);
+		//Comprobar si poseen valores nulos en las constraints?
+		
+		//LowerThan for C and G
+		UnaryConstraint unary = new UnaryConstraint(this.getVariables().subList(C, C), "LowerThan");
+		this.getVariables().get(C).addConstraint(unary);
+		
+		unary = new UnaryConstraint(this.getVariables().subList(G, G), "LowerThan");
+		this.getVariables().get(G).addConstraint(unary);
 		
 		//EqualTo Constant and Multiplier
-		EqualTo equal = new EqualTo(this.getVariables().subList(M, M), "EqualTo");
-		equal.setValue(multiplier);
-		this.getVariables().get(M).addConstraint(equal);
+		unary = new UnaryConstraint(this.getVariables().subList(M, M), "EqualTo");
+		unary.setValue(multiplier);
+		this.getVariables().get(M).addConstraint(unary);
 		
-		equal = new EqualTo(this.getVariables().subList(H, H), "EqualTo");
-		equal.setValue(constant);
-		this.getVariables().get(H).addConstraint(equal);
+		unary = new UnaryConstraint(this.getVariables().subList(H, H), "EqualTo");
+		unary.setValue(constant);
+		this.getVariables().get(H).addConstraint(unary);
+		
+		//Distinct from constant and multiplier
+		List<Variable<Integer>> sub = this.getVariables().subList(A, G);
+		sub.remove(M);
+		unary = new UnaryConstraint(sub, "DistinctFrom");
+		unary.setValue(multiplier);
+		
+		for (Variable<Integer> digit : sub ) 
+			digit.addConstraint(unary);
+		
+		//If constant == multiplier create this constraint is unnecessary
+		if (multiplier != constant){
+			unary = new UnaryConstraint(sub, "DistinctFrom");
+			unary.setValue(constant);
+			
+			for (Variable<Integer> digit : sub ) 
+				digit.addConstraint(unary);		
+		}
 		
 		//MaxMinutes
 		MaxMinutes max = new MaxMinutes(this.getVariables().subList(A, B), "MaxMinutes");
@@ -98,36 +118,50 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		this.getVariables().get(B).addConstraint(max);
 		
 		max = new MaxMinutes(this.getVariables().subList(E, F), "MaxMinutes");
-		max.setMaxMinutes(maxMinutes);
 		this.getVariables().get(E).addConstraint(max);
 		this.getVariables().get(F).addConstraint(max);
 		
+		//Adds
+		sub.clear();
+		sub.add(this.getVariables().get(D));
+		sub.add(this.getVariables().get(X1));
+		Add add = new Add(sub, "Add");
+		add.setConstant(constant);
+		add.setMultiplier(multiplier);
+		this.getVariables().get(D).addConstraint(add);
+		this.getVariables().get(X1).addConstraint(add);
 		
-		//Distinct from constant and multiplier
-		DistinctFrom distinct;
-		List<Variable<Integer>> sub = this.getVariables().subList(A, G);
-		sub.remove(M);
-		distinct = new DistinctFrom(sub, "DistinctFrom");
-		distinct.setValue(multiplier);
+		sub.clear();
+		sub.add(this.getVariables().get(A));
+		sub.add(this.getVariables().get(E));
+		sub.add(this.getVariables().get(X3));
+		add = new Add(sub, "Add");
+		this.getVariables().get(A).addConstraint(add);
+		this.getVariables().get(E).addConstraint(add);
+		this.getVariables().get(X3).addConstraint(add);
 		
-		for (Variable<Integer> digit : sub ) 
-			digit.addConstraint(distinct);
+		sub.clear();
+		sub.add(this.getVariables().get(B));
+		sub.add(this.getVariables().get(F));
+		sub.add(this.getVariables().get(X2));
+		sub.add(this.getVariables().get(X3));
+		add = new Add(sub, "Add");
+		this.getVariables().get(B).addConstraint(add);
+		this.getVariables().get(F).addConstraint(add);
+		this.getVariables().get(X2).addConstraint(add);
+		this.getVariables().get(X3).addConstraint(add);
 		
-		//If constant == multipleir create this constraint is unnecessary
-		if (multiplier != constant){
-			distinct = new DistinctFrom(sub, "DistinctFrom");
-			distinct.setValue(constant);
-			
-			for (Variable<Integer> digit : sub ) 
-				digit.addConstraint(distinct);		
-		}
+		sub.clear();
+		sub.add(this.getVariables().get(C));
+		sub.add(this.getVariables().get(G));
+		sub.add(this.getVariables().get(X1));
+		sub.add(this.getVariables().get(X2));
+		add = new Add(sub, "Add");
+		this.getVariables().get(C).addConstraint(add);
+		this.getVariables().get(G).addConstraint(add);
+		this.getVariables().get(X1).addConstraint(add);
+		this.getVariables().get(X2).addConstraint(add);
 		
-		
-		// 2 Suma1
-		// 2 Suma2
-		
-		//En cada constraint crear una variable para saber si es unaria o no.
-		//Si creo el unary constraint solo ahce falta preguntar si la constraint asociada a la variable es de tipo UnaryConstraint
 		
 		/*
 		ConstraintsTimeEquation cons1 = new ConstraintsTimeEquation(this.getVariables(), "unary");
@@ -145,7 +179,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		//----
 		d.addConstraint(cons1);
 		*/					
-		}
+	}
 	
 	
 	private List<Integer> createDomain() {

@@ -3,7 +3,6 @@ package es.deusto.ingenieria.aike.TimeEquation;
 import java.util.List;
 
 import es.deusto.ingenieria.aike.csp.algorithm.BackTracking;
-import es.deusto.ingenieria.aike.formulation.State;
 import es.deusto.ingenieria.aike.xml.InformationXMLReader;
 
 public class MainProgram {
