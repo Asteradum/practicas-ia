@@ -31,11 +31,6 @@ public class UnaryConstraint extends Constraint<Integer> {
 		
 		if ( ( variable!= null ) && ( this.getVariables().contains(variable) ) ) {
 			
-			for (Variable<Integer> digit : getVariables() ){
-				if ( !digit.hasValue() ) return true;
-			}
-				
-			
 			switch (constraintType) {
 				case 1: // LowerThan
 					
