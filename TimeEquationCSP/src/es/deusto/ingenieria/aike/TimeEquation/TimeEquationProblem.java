@@ -14,52 +14,122 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 //This means that the values the variables of the Queens Problem will take are Integers
 public class TimeEquationProblem extends CSPproblem<Integer> {
 		
-	private List<Integer> xmlData;
+	//This constants are used to take the variabel from the list
+	private final int A = 0;
+	private final int B = 1;
+	private final int C = 2;
+	private final int D = 3;
+	private final int M = 4;
+	private final int E = 5;
+	private final int F = 6;
+	private final int G = 7;
+	private final int H = 8;
+	private final int X1 = 9;
+	private final int X2 = 10;
+	private final int X3 = 11;
+	
+	private int multiplier;
+	private int constant;
+	private int maxMinutes;
 	
 	public TimeEquationProblem(List<Integer> list) {
-		this.xmlData = list;
+		this.multiplier = list.get(0);
+		this.constant = list.get(1);
+		this.maxMinutes = list.get(2);
 		this.createDigits();
 		this.createConstraints();
 	}
 	
 	private void createDigits() {	
 		List<Integer> d = this.createDomain();
+		Digit digit;
 		
-		//Crear una enumeracion
-		/* 0 = A
-		 * 1 = B
-		 * 2 = C
-		 * 3 = D
-		 * 4 = M
-		 * 5 = E
-		 * 6 = F
-		 * 7 = G
-		 * 8 = H (Constant)
-		 * 9 = X1
-		 * 10 = x2
-		 * 11 = X3
-		 */
+		char name='A';
+		for (int i=0; name<='D';i++){
+			this.addVariable(new Digit(String.valueOf(name), d));
+			name++;
+		}
 		
-		for (char c='A'; c<='G'; c++)
-			this.addVariable(new Digit(c, d));
+		//The multiplier
+		digit = new Digit("M", d);
+		digit.setValue(multiplier);
+		this.addVariable(digit);
+		
+		name='E';
+		for (int i=0; name<='H';i++){
+			if ( name=='H'){ //The constant
+				digit = new Digit(String.valueOf(name),d);
+				digit.setValue(constant);
+				this.addVariable(digit);
+			}	
+			else this.addVariable(new Digit(String.valueOf(name), d));
+			name++;
+		}
+		
+		//The auxiliary
+		this.addVariable(new Digit("X1", d));
+		this.addVariable(new Digit("X2", d));
+		this.addVariable(new Digit("X3", d));
 	}
 	
 	private void createConstraints() {
-		//LowerThan lower = new LowerThan(); 
-		//lower = new LowerThan();
+		
+		// Crear un UnaryConstraint que dependiendo del nombre, haga un menor, un mayor o un igual en el isSatisfied
+		//LowerThan for C and G
+		LowerThan lower = new LowerThan(this.getVariables().subList(C, C), "LowerThan");
+		this.getVariables().get(C).addConstraint(lower);
+		
+		lower = new LowerThan(this.getVariables().subList(G, G), "LowerThan");
+		this.getVariables().get(G).addConstraint(lower);
+		
+		//EqualTo Constant and Multiplier
+		EqualTo equal = new EqualTo(this.getVariables().subList(M, M), "EqualTo");
+		equal.setValue(multiplier);
+		this.getVariables().get(M).addConstraint(equal);
+		
+		equal = new EqualTo(this.getVariables().subList(H, H), "EqualTo");
+		equal.setValue(constant);
+		this.getVariables().get(H).addConstraint(equal);
+		
+		//MaxMinutes
+		MaxMinutes max = new MaxMinutes(this.getVariables().subList(A, B), "MaxMinutes");
+		max.setMaxMinutes(maxMinutes);
+		this.getVariables().get(A).addConstraint(max);
+		this.getVariables().get(B).addConstraint(max);
+		
+		max = new MaxMinutes(this.getVariables().subList(E, F), "MaxMinutes");
+		max.setMaxMinutes(maxMinutes);
+		this.getVariables().get(E).addConstraint(max);
+		this.getVariables().get(F).addConstraint(max);
 		
 		
-		// Dos LowerThan
-		// 2 EqualTo
-		// 14 distinct from (7 para la constante y 7 para el multiplier); comprobar si m y c son iguales, meterle el valor con un set
-		// Sustituir estas 3 clases por un UnaryConstraint que dependiendo de lo que se le pase, haga un menor un mayor o un igual
+		//Distinct from constant and multiplier
+		DistinctFrom distinct;
+		List<Variable<Integer>> sub = this.getVariables().subList(A, G);
+		sub.remove(M);
+		distinct = new DistinctFrom(sub, "DistinctFrom");
+		distinct.setValue(multiplier);
 		
-		// Posiblemente en el environment haya que cambair los int por digit para que cumplan las constraint especificadas en la docu
-		// 2 MaxMinutes, meterle el maxMinutes con un set
+		for (Variable<Integer> digit : sub ) 
+			digit.addConstraint(distinct);
+		
+		//If constant == multipleir create this constraint is unnecessary
+		if (multiplier != constant){
+			distinct = new DistinctFrom(sub, "DistinctFrom");
+			distinct.setValue(constant);
+			
+			for (Variable<Integer> digit : sub ) 
+				digit.addConstraint(distinct);		
+		}
+		
+		
 		// 2 Suma1
 		// 2 Suma2
 		
+		//En cada constraint crear una variable para saber si es unaria o no.
+		//Si creo el unary constraint solo ahce falta preguntar si la constraint asociada a la variable es de tipo UnaryConstraint
 		
+		/*
 		ConstraintsTimeEquation cons1 = new ConstraintsTimeEquation(this.getVariables(), "unary");
 		ConstraintsTimeEquation cons2 = new ConstraintsTimeEquation(this.getVariables(), "binary");
 		ConstraintsTimeEquation cons3 = new ConstraintsTimeEquation(this.getVariables(), "global");
@@ -74,7 +144,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		a.addConstraint(cons3);
 		//----
 		d.addConstraint(cons1);
-							
+		*/					
 		}
 	
 	
@@ -93,12 +163,12 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		String result = "   ";
 		result="A B : C D x Multiplier = E F : G Constant";
 		result += "\n";
-		result+="    :     x     "+this.xmlData.get(0)+"      =     :      "+this.xmlData.get(1);
+		result+="    :     x     "+ multiplier +"      =     :      "+constant;
 		result += "\n";
 		result += "Final Values: ";
 		result += "\n";
 		result+=this.getVariables().get(0).getValue()+" "+this.getVariables().get(1).getValue()+" : "+this.getVariables().get(2).getValue()+" "+this.getVariables().get(3).getValue()+" x    " +
-				" "+this.xmlData.get(0)+"      = "+this.getVariables().get(4).getValue()+" "+this.getVariables().get(5).getValue()+" : "+this.getVariables().get(6).getValue()+"    "+this.xmlData.get(1);
+				" "+ multiplier +"      = "+this.getVariables().get(4).getValue()+" "+this.getVariables().get(5).getValue()+" : "+this.getVariables().get(6).getValue()+"    "+constant;
 		return result;
 	}
 	

@@ -9,9 +9,9 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 public class Digit extends Variable<Integer> {
 
 	
-	public Digit(char box, List<Integer> domainValues) {
+	public Digit(String string, List<Integer> domainValues) {
 		//Each digit is fixed to a different box (A, B, C...). So the box names the digit
-		super(String.valueOf(box), domainValues);
+		super(string, domainValues);
 	}
 	
 	/**

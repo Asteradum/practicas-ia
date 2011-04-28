@@ -9,19 +9,27 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 
 //We have subclassed Constraint binding its parameter to Integer
 //This means that the values the variables of the Queens Problem will take are Integers
-public class LowerThan extends Constraint<Integer> {
+public class EqualTo extends Constraint<Integer> {
 	
-	private final int VALUE = 6; //the ten second just can go from 0 to 5
+	private int value; //the value of the Constant or the Multiplier
 
-	public LowerThan(List<Variable<Integer>> variables, String name){
+	public EqualTo(List<Variable<Integer>> variables, String name){
 		super(name, variables);
 	}
 
 	public boolean isSatisfied(Variable<Integer> variable, Integer value) {
 		
-		if ( ( variable!= null )&& ( this.getVariables().contains(variable) ) && ( value < VALUE ) )
+		if ( ( variable!= null )&& ( this.getVariables().contains(variable) ) && ( value == this.value ) )
 			return true;
 		else return false;
 		
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
 	}
 }
