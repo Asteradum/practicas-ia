@@ -24,9 +24,11 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	private final int F = 6;
 	private final int G = 7;
 	private final int H = 8;
+	/*
 	private final int X1 = 9;
 	private final int X2 = 10;
 	private final int X3 = 11;
+	*/
 	
 	private int multiplier;
 	private int constant;
@@ -65,17 +67,136 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 			else this.addVariable(new Digit(String.valueOf(name), d));
 			name++;
 		}
-		
+		/*
 		//The auxiliary
 		this.addVariable(new Digit("X1", d));
 		this.addVariable(new Digit("X2", d));
 		this.addVariable(new Digit("X3", d));
+		*/
 	}
 	
 	private void createConstraints() {
 		
+		/*
+		Variable<Integer> varA = this.getVariables().get(A);
+		Variable<Integer> varB = this.getVariables().get(B);
+		Variable<Integer> varC = this.getVariables().get(C);
+		Variable<Integer> varD = this.getVariables().get(D);
+		Variable<Integer> varM = this.getVariables().get(M);
+		Variable<Integer> varE = this.getVariables().get(E);
+		Variable<Integer> varF = this.getVariables().get(F);
+		Variable<Integer> varG = this.getVariables().get(G);
+		Variable<Integer> varH = this.getVariables().get(H);
+		Variable<Integer> varX1 = this.getVariables().get(X1);
+		Variable<Integer> varX2 = this.getVariables().get(X2);
+		Variable<Integer> varX3 = this.getVariables().get(X3);
 		
-		//Comprobar si poseen valores nulos en las constraints?
+		//LowerThan for C and G
+		List<Variable<Integer>> sub = new ArrayList<Variable<Integer>>();
+		sub.add(varC);
+		UnaryConstraint unary = new UnaryConstraint(sub, "LowerThan");
+		varC.addConstraint(unary);
+		
+		sub.clear();
+		sub.add(varG);
+		unary = new UnaryConstraint(sub, "LowerThan");
+		varG.addConstraint(unary);
+		
+		//EqualTo Constant and Multiplier
+		sub.clear();
+		sub.add(varM);
+		unary = new UnaryConstraint(sub, "EqualTo");
+		unary.setValue(multiplier);
+		varM.addConstraint(unary);
+		
+		sub.clear();
+		sub.add(varH);
+		unary = new UnaryConstraint(sub, "EqualTo");
+		unary.setValue(constant);
+		varH.addConstraint(unary);
+		
+		//Distinct from constant and multiplier
+		sub.clear();
+		sub.add(varA);
+		sub.add(varB);
+		sub.add(varC);
+		sub.add(varD);
+		sub.add(varE);
+		sub.add(varF);
+		sub.add(varG);
+		unary = new UnaryConstraint(sub, "DistinctFrom");
+		unary.setValue(multiplier);
+		
+		for (Variable<Integer> digit : sub ) 
+			digit.addConstraint(unary);
+		
+		//If constant == multiplier create this constraint is unnecessary
+		if (multiplier != constant){
+			unary = new UnaryConstraint(sub, "DistinctFrom");
+			unary.setValue(constant);
+			
+			for (Variable<Integer> digit : sub ) 
+				digit.addConstraint(unary);		
+		}
+		
+		//MaxMinutes
+		sub.clear();
+		sub.add(varA);
+		sub.add(varB);
+		MaxMinutes max = new MaxMinutes(sub, "MaxMinutes");
+		max.setMaxMinutes(maxMinutes);
+		varA.addConstraint(max);
+		varB.addConstraint(max);
+		
+		sub.clear();
+		sub.add(varE);
+		sub.add(varF);
+		max = new MaxMinutes(sub, "MaxMinutes");
+		varE.addConstraint(max);
+		varF.addConstraint(max);
+		
+		//Adds
+		sub.clear();
+		sub.add(this.getVariables().get(D));
+		sub.add(this.getVariables().get(X1));
+		Add add = new Add(sub, "Add");
+		add.setConstant(constant);
+		add.setMultiplier(multiplier);
+		this.getVariables().get(D).addConstraint(add);
+		this.getVariables().get(X1).addConstraint(add);
+		
+		sub.clear();
+		sub.add(varA);
+		sub.add(varE);
+		sub.add(varX3);
+		add = new Add(sub, "Add");
+		varA.addConstraint(add);
+		varE.addConstraint(add);
+		varX3.addConstraint(add);
+		
+		sub.clear();
+		sub.add(varB);
+		sub.add(varF);
+		sub.add(varX2);
+		sub.add(varX3);
+		add = new Add(sub, "Add");
+		varB.addConstraint(add);
+		varF.addConstraint(add);
+		varX2.addConstraint(add);
+		varX3.addConstraint(add);
+		
+		sub.clear();
+		sub.add(varC);
+		sub.add(varG);
+		sub.add(varX1);
+		sub.add(varX2);
+		add = new Add(sub, "Add");
+		varC.addConstraint(add);
+		varG.addConstraint(add);
+		varX1.addConstraint(add);
+		varX2.addConstraint(add);	
+		*/
+		
 		
 		//LowerThan for C and G
 		UnaryConstraint unary = new UnaryConstraint(this.getVariables().subList(C, D), "LowerThan");
@@ -89,7 +210,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		unary.setValue(multiplier);
 		this.getVariables().get(M).addConstraint(unary);
 		
-		unary = new UnaryConstraint(this.getVariables().subList(H, X1), "EqualTo");
+		unary = new UnaryConstraint(this.getVariables().subList(H, H+1), "EqualTo");
 		unary.setValue(constant);
 		this.getVariables().get(H).addConstraint(unary);
 		
@@ -121,7 +242,35 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		this.getVariables().get(E).addConstraint(max);
 		this.getVariables().get(F).addConstraint(max);
 		
+		
 		//Adds
+		sub.clear();
+		sub.add(this.getVariables().get(A));
+		sub.add(this.getVariables().get(B));
+		sub.add(this.getVariables().get(C));
+		sub.add(this.getVariables().get(D));
+		sub.add(this.getVariables().get(E));
+		sub.add(this.getVariables().get(F));
+		Add add = new Add(sub, "Add");
+		add.setConstant(constant);
+		add.setMultiplier(multiplier);
+		this.getVariables().get(A).addConstraint(add);
+		this.getVariables().get(B).addConstraint(add);
+		this.getVariables().get(C).addConstraint(add);
+		this.getVariables().get(D).addConstraint(add);
+		this.getVariables().get(E).addConstraint(add);
+		this.getVariables().get(F).addConstraint(add);
+		
+		sub.clear();
+		sub.add(this.getVariables().get(C));
+		sub.add(this.getVariables().get(D));
+		sub.add(this.getVariables().get(G));
+		add = new Add(sub, "Add");
+		this.getVariables().get(C).addConstraint(add);
+		this.getVariables().get(D).addConstraint(add);
+		this.getVariables().get(G).addConstraint(add);
+		
+		/*
 		sub.clear();
 		sub.add(this.getVariables().get(D));
 		sub.add(this.getVariables().get(X1));
@@ -161,7 +310,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		this.getVariables().get(G).addConstraint(add);
 		this.getVariables().get(X1).addConstraint(add);
 		this.getVariables().get(X2).addConstraint(add);	
-	
+		*/
 	}
 	
 	
@@ -184,8 +333,13 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		result += "\n";
 		result += "Final Values: ";
 		result += "\n";
-		result+=this.getVariables().get(0).getValue()+" "+this.getVariables().get(1).getValue()+" : "+this.getVariables().get(2).getValue()+" "+this.getVariables().get(3).getValue()+" x    " +
-				" "+ multiplier +"      = "+this.getVariables().get(4).getValue()+" "+this.getVariables().get(5).getValue()+" : "+this.getVariables().get(6).getValue()+"    "+constant;
+		result+= this.getVariables().get(A).getValue() + " " + this.getVariables().get(B).getValue() + " : " 
+				+ this.getVariables().get(C).getValue()+ " " + this.getVariables().get(D).getValue() + " x    " 
+				+ " " + this.getVariables().get(M).getValue() + "      = " + this.getVariables().get(E).getValue()
+				+ " " + this.getVariables().get(F).getValue()+ " : " + this.getVariables().get(G).getValue()
+				+ "    " + this.getVariables().get(H).getValue();
+		//result += "\n";
+		//result += "Auxiliary Variables: X1 = " + this.getVariables().get(X1).getValue() + ", X2 = " + this.getVariables().get(X2).getValue() + ", X3 = " + this.getVariables().get(X3).getValue();
 		return result;
 	}
 	
