@@ -224,7 +224,7 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		long hours = minutes / 60;
 		minutes %= 60;
 		
-		String time = "\n* Serach lasts: ";
+		String time = "\n* Search lasts: ";
 		time += (hours > 0) ? hours + " h " : " ";
 		time += (minutes > 0) ? minutes + " m " : " ";
 		time += (seconds > 0) ? seconds + "s " : " ";

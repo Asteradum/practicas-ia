@@ -19,7 +19,11 @@ public class Add extends Constraint<Integer> {
 
 	public boolean isSatisfied(Variable<Integer> variable, Integer value) {		
 		
-		if ( ( variable!= null )&& ( this.getVariables().contains(variable) ) )
+		if ( ( variable!= null )&& ( this.getVariables().contains(variable) ) ){
+			
+			for (Variable<Integer> digit : getVariables() ){
+				if ( !digit.hasValue() ) return true;
+			}
 			
 			switch (addType) {
 				case 2: // D x Multiplier = Constant + 10 x X1
@@ -43,6 +47,7 @@ public class Add extends Constraint<Integer> {
 				default: System.out.println("Error, the add constraint does not have a correct type");
 					return false;
 			}
+		}
 		else return false;
 		
 	}
