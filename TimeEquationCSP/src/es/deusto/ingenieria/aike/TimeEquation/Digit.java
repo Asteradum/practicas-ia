@@ -4,8 +4,6 @@ import java.util.List;
 
 import es.deusto.ingenieria.aike.csp.formulation.Variable;
 
-//We have subclassed Variable binding its parameter to Integer
-//This means that the values the variables of the Queens Problem will take are Integers
 public class Digit extends Variable<Integer> {
 
 	

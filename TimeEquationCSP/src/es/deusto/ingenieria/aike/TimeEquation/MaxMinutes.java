@@ -1,19 +1,15 @@
 package es.deusto.ingenieria.aike.TimeEquation;
 
-import java.awt.Point;
 import java.util.List;
 
 import es.deusto.ingenieria.aike.csp.formulation.Constraint;
 import es.deusto.ingenieria.aike.csp.formulation.Variable;
 
-
-//We have subclassed Constraint binding its parameter to Integer
-//This means that the values the variables of the Queens Problem will take are Integers
 public class MaxMinutes extends Constraint<Integer> {
 	
-	private int maxMinutes;
-	private int ten;
-	private int unit;
+	private static int maxMinutes;
+	private static int ten;
+	private static int unit;
 
 	public MaxMinutes(List<Variable<Integer>> variables, String name){
 		// 0 = Ten
@@ -48,8 +44,8 @@ public class MaxMinutes extends Constraint<Integer> {
 	}
 
 	public void setMaxMinutes(int maxMinutes) {
-		this.maxMinutes = maxMinutes;
-		this.ten = maxMinutes / 10;
-		this.unit = maxMinutes % 10;
+		MaxMinutes.maxMinutes = maxMinutes;
+		MaxMinutes.ten = maxMinutes / 10;
+		MaxMinutes.unit = maxMinutes % 10;
 	}
 }
