@@ -170,13 +170,10 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	}
 	
 	public void solve(CSPAlgorithm<Integer> algorithm) {
-		//Insertar el NodeConsistency
-		NodeConsistency consist=new NodeConsistency();
-		TimeEquationProblem problem=consist.makeConsistent(this);
 		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss.S");
 		Date beginDate = GregorianCalendar.getInstance().getTime();
 		System.out.println("\n* Begin '" + algorithm.getClass().getName() + "' (" + formatter.format(beginDate) + ")");		
-		boolean solutionFound = algorithm.solve(problem);
+		boolean solutionFound = algorithm.solve(this);
 		Date endDate = GregorianCalendar.getInstance().getTime();		
 		System.out.println("* End   '" + algorithm.getClass().getName() + "' (" + formatter.format(endDate) + ")");
 		

@@ -9,8 +9,10 @@ public class MainProgram {
 
 	public static void main(String[] args) {
 		try {						
-			InformationXMLReader SAXParserEnvironment = new TimeEquationXMLReader("data/equationMinSec-1.xml");
+			InformationXMLReader SAXParserEnvironment = new TimeEquationXMLReader("data/equationMinSec-2.xml");
 			TimeEquationProblem problem = new TimeEquationProblem((List<Integer>)SAXParserEnvironment.getInformation());
+			NodeConsistency consist=new NodeConsistency();
+			consist.makeConsistent(problem);
 			BackTracking<Integer> backTracking = new BackTracking<Integer>();			
 			problem.solve(backTracking);				
 		} catch (Exception ex) {

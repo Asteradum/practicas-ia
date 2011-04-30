@@ -7,5 +7,5 @@ import es.deusto.ingenieria.aike.csp.formulation.Variable;
 public interface ConstraintPropagation {
 	
 	
-	public TimeEquationProblem makeConsistent(TimeEquationProblem problem);
+	public void makeConsistent(TimeEquationProblem problem);
 }
