@@ -17,42 +17,44 @@ public class NodeConsistency implements ConstraintPropagation {
 		int varSize = problem.getVariables().size();
 		int varConst;
 		UnaryConstraint cons;
+		lista=problem.getVariables();
 		for (int i=0;i<varSize;i++){
-			lista=problem.getVariables();
 			//hago una lista con las constraints de cada variable
 			listConst=lista.get(i).getConstraints();
 			varConst = listConst.size();
+			System.out.println("INICIAL "+lista.get(i).getName()+" "+lista.get(i).getDomain());
 			for (int j=0;j<varConst;j++){
 				if (listConst.get(j) instanceof UnaryConstraint){
 					cons = (UnaryConstraint) listConst.get(j);
 					if (cons.getName().equals("DistinctFrom")){
-						//System.out.println(listaConst.get(j).getValue());
-						//System.out.println(lista.get(i).getValue());
-						// Mira tu sysout y comparalo con el mio, 
-						// estabas recogiendo valores de variables, no de constraints
-						List<Integer> domain = new ArrayList<Integer>(9);
-						int multiplier=lista.get(4).getValue();
-						int constant=lista.get(8).getValue();
-						int d=1;
-						while (d<10){
-							if ((d!=multiplier) &&(d!=constant))
-								domain.add(d);
-							d++;
-						}
-						lista.get(i).setDomain(domain);
-					}
-					else if (cons.getName().equals("EqualTo")){
+						int value=cons.getValue();
+						lista.get(i).getDomain().remove((Object)value);
+						//System.out.println(lista.get(i).getName()+" "+lista.get(i).getDomain());
 						
 					}
+					else if (cons.getName().equals("EqualTo")){
+						int value=cons.getValue();
+						List<Integer> domain = new ArrayList<Integer>(1);		
+						domain.add(value);
+						lista.get(i).setDomain(domain);
+						//System.out.println(lista.get(i).getName()+" "+lista.get(i).getDomain());
+						/*int dom=1;
+						while (dom!=value&& dom<10)
+							{lista.get(i).getDomain().remove((Object)dom);
+							dom++;}*/
+					}
 					else {
+						int value=cons.getValue();
 						List<Integer> domain = new ArrayList<Integer>(6);		
-						for (int dom=1; dom<=5; dom++) 
+						for (int dom=1; dom<value; dom++)
 							domain.add(dom);
 						lista.get(i).setDomain(domain);
+						//System.out.println(lista.get(i).getName()+" "+lista.get(i).getDomain());
+						
 					}
 				}
 			}
-					
+			System.out.println("FINAL"+lista.get(i).getName()+" "+lista.get(i).getDomain());		
 		}
 		
 	}
