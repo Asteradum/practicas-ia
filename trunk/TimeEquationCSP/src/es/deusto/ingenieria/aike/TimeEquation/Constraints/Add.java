@@ -1,4 +1,4 @@
-package es.deusto.ingenieria.aike.TimeEquation;
+package es.deusto.ingenieria.aike.TimeEquation.Constraints;
 
 import java.util.List;
 

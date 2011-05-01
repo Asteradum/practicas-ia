@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import es.deusto.ingenieria.aike.TimeEquation.Constraints.Add;
+import es.deusto.ingenieria.aike.TimeEquation.Constraints.MaxMinutes;
+import es.deusto.ingenieria.aike.TimeEquation.Constraints.UnaryConstraint;
 import es.deusto.ingenieria.aike.csp.algorithm.CSPAlgorithm;
 import es.deusto.ingenieria.aike.csp.formulation.CSPproblem;
 import es.deusto.ingenieria.aike.csp.formulation.Variable;
@@ -36,28 +39,27 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	}
 	
 	private void createDigits() {	
-		List<Integer> d = this.createDomain();
 		Digit digit;
 		
 		char name='A';
 		for (int i=0; name<='D';i++){
-			this.addVariable(new Digit(String.valueOf(name), d));
+			this.addVariable(new Digit(String.valueOf(name), this.createDomain()));
 			name++;
 		}
 		
 		//The multiplier
-		digit = new Digit("M", d);
-		digit.setValue(multiplier);
+		digit = new Digit("M", this.createDomain());
+		//digit.setValue(multiplier); // It could be used to reduce the search time
 		this.addVariable(digit);
 		
 		name='E';
 		for (int i=0; name<='H';i++){
 			if ( name=='H'){ //The constant
-				digit = new Digit(String.valueOf(name),d);
-				digit.setValue(constant);
+				digit = new Digit(String.valueOf(name), this.createDomain());
+				//digit.setValue(constant); // It could be used to reduce the search time
 				this.addVariable(digit);
 			}	
-			else this.addVariable(new Digit(String.valueOf(name), d));
+			else this.addVariable(new Digit(String.valueOf(name), this.createDomain()));
 			name++;
 		}
 
@@ -65,12 +67,22 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 	
 	private void createConstraints() {
 		
-		//LowerThan for C and G
+		//LowerThan for A, C, E and G
 		UnaryConstraint unary = new UnaryConstraint(this.getVariables().subList(C, D), "LowerThan");
+		unary.setValue(6); //The ten second cannot exceed the 5 ( 0:59 -> 1:00 )
 		this.getVariables().get(C).addConstraint(unary);
 		
 		unary = new UnaryConstraint(this.getVariables().subList(G, H), "LowerThan");
+		unary.setValue(6); //The ten second cannot exceed the 5 ( 0:59 -> 1:00 )
 		this.getVariables().get(G).addConstraint(unary);
+		
+		unary = new UnaryConstraint(this.getVariables().subList(A, B), "LowerThan");
+		unary.setValue( maxMinutes/10 + 1);
+		this.getVariables().get(A).addConstraint(unary);
+		
+		unary = new UnaryConstraint(this.getVariables().subList(E, F), "LowerThan");
+		unary.setValue( maxMinutes/10 + 1);
+		this.getVariables().get(E).addConstraint(unary);
 		
 		//EqualTo Constant and Multiplier
 		unary = new UnaryConstraint(this.getVariables().subList(M, E), "EqualTo");
@@ -155,17 +167,11 @@ public class TimeEquationProblem extends CSPproblem<Integer> {
 		String result = "   ";
 		result="A B : C D x Multiplier = E F : G Constant";
 		result += "\n";
-		result+="    :     x     "+ multiplier +"      =     :      "+constant;
-		result += "\n";
-		result += "Final Values: ";
-		result += "\n";
 		result+= this.getVariables().get(A).getValue() + " " + this.getVariables().get(B).getValue() + " : " 
 				+ this.getVariables().get(C).getValue()+ " " + this.getVariables().get(D).getValue() + " x    " 
 				+ " " + this.getVariables().get(M).getValue() + "      = " + this.getVariables().get(E).getValue()
 				+ " " + this.getVariables().get(F).getValue()+ " : " + this.getVariables().get(G).getValue()
 				+ "    " + this.getVariables().get(H).getValue();
-		//result += "\n";
-		//result += "Auxiliary Variables: X1 = " + this.getVariables().get(X1).getValue() + ", X2 = " + this.getVariables().get(X2).getValue() + ", X3 = " + this.getVariables().get(X3).getValue();
 		return result;
 	}
 	
