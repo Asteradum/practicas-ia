@@ -1,0 +1,1 @@
+Para las 3 practicas de IA
